@@ -1,0 +1,5 @@
+#*
+.emacs.desktop*
+/*-local.el
+/auto-save*
+/backups
