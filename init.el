@@ -1,5 +1,6 @@
 ;; ========== basics ===============
 (setq inhibit-splash-screen t)
+(setq root-directory default-directory)
 
 ;; ======== desktop mode ===========
 (desktop-save-mode 1)
@@ -36,4 +37,4 @@
 			 "./.emacs-project.el"
 			 "./.emacs-local.el"))
   (if (file-exists-p init-file)
-      (load init-file)))
+      (load-file init-file)))
