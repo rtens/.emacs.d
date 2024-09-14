@@ -1,6 +1,10 @@
 ;; ========== basics ===============
 (setq inhibit-splash-screen t)
 (setq root-directory default-directory)
+(winner-mode)
+
+;; ========== formatting ===========
+(setq js-indent-level 2)
 
 ;; ======== desktop mode ===========
 (desktop-save-mode 1)
