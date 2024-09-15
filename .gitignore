@@ -4,3 +4,5 @@
 /auto-save*
 /backups
 /elpa
+.mc-lists.el
+ac-comphist.dat

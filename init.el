@@ -79,5 +79,13 @@
   :ensure t
   :config (add-hook 'js-mode-hook #'highlight-symbol-mode))
 
+(use-package multiple-cursors :ensure t)
+(global-set-key (kbd "C-c c") 'mc/edit-lines)
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c f") 'mc/mark-next-like-this-symbol)
+(global-set-key (kbd "C-c b") 'mc/mark-previous-like-this-symbol)
+(global-set-key (kbd "C-c a") 'mc/mark-all-symbols-like-this)
+
 (provide 'init)
 ;;; init.el ends here
