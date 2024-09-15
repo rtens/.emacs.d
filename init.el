@@ -87,5 +87,7 @@
 (global-set-key (kbd "C-c b") 'mc/mark-previous-like-this-symbol)
 (global-set-key (kbd "C-c a") 'mc/mark-all-symbols-like-this)
 
+(use-package magit :ensure t)
+
 (provide 'init)
 ;;; init.el ends here
