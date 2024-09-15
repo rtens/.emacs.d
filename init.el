@@ -48,6 +48,7 @@
 ;; ========== packages ============
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
 
 (use-package move-dup :ensure t)
 (global-move-dup-mode)
@@ -70,6 +71,9 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+(use-package auto-complete :ensure t)
+(global-auto-complete-mode t)
 
 (provide 'init)
 ;;; init.el ends here
