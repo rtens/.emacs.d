@@ -75,5 +75,9 @@
 (use-package auto-complete :ensure t)
 (global-auto-complete-mode t)
 
+(use-package highlight-symbol
+  :ensure t
+  :config (add-hook 'js-mode-hook #'highlight-symbol-mode))
+
 (provide 'init)
 ;;; init.el ends here
