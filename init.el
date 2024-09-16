@@ -5,7 +5,7 @@
 (setq root-directory default-directory)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(fset 'yes-or-no-p 'y-or-no-p)
+(fset 'yes-or-no-p 'y-or-n-p)
 (winner-mode)
 (electric-pair-mode)
 (ido-mode t)
