@@ -47,6 +47,7 @@
 ;; Own key bindings
 (global-set-key (kbd "C-c C-v") 'imenu)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x /") 'comment-line)
 
 ;; Toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
