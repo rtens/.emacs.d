@@ -10,9 +10,14 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (winner-mode 1)
 (electric-pair-mode 1)
-(global-auto-revert-mode 1)
 (global-subword-mode 1)
 (ido-mode t)
+
+;; Keep buffers up-to-date
+(global-auto-revert-mode 1)
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
 
 (setq-default indent-tabs-mode nil
         tab-width 2
@@ -30,7 +35,6 @@
 (prefer-coding-system 'utf-8)
 
 (set-frame-font (if (>= (display-pixel-width) 2500) "Menlo 20" "Menlo 12"))
-
 
 ;; Own key bindings
 (global-set-key (kbd "C-c C-v") 'imenu)
