@@ -205,5 +205,10 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
+(use-package markdown-mode :ensure t)
+
+(use-package centered-window :ensure t)
+(centered-window-mode t)
+
 (provide 'init)
 ;;; init.el ends here
