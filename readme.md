@@ -51,6 +51,13 @@ Init files (if existing) are loaded in this order:
         - with regex `C-M-%`
         - capture groups `\(.+\)` > `\1`
     - comment lines `C-x /`
+- cursor
+    - multi cursor
+        - per line in region `C-c c`
+        - next like this or line `C-c n/p`
+        - next symbol `C-c f/b`
+        - all symbols `C-c a`
+    - expand region `C-c g`
 - navigate in buffer
     - collapse everything `C-c h H`
     - expand next level `C-c h l`
@@ -79,7 +86,6 @@ Init files (if existing) are loaded in this order:
 
 ## To explore
 
-- expand-region
 - yasnippet
 - dump-jump
 

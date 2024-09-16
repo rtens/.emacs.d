@@ -251,6 +251,9 @@
 (use-package avy :ensure t)
 (define-key global-map (kbd "C-c SPC") 'avy-goto-char-timer)
 
+(use-package expand-region :ensure t)
+(global-set-key (kbd "C-c g") 'er/expand-region)
+
 ;; ====== init files cascade ======
 (dolist (init-file (list "~/.emacs.d/custom.el"
        "~/.emacs.d/custom-local.el"
