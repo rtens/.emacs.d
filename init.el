@@ -1,8 +1,28 @@
 ;; ========== basics ===============
+(setq user-full-name "Nikolas Martens")
+(setq user-mail-address "Nikolas.M@rtens.org")
 (setq inhibit-splash-screen t)
 (setq root-directory default-directory)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(fset 'yes-or-no-p 'y-or-no-p)
 (winner-mode)
 (electric-pair-mode)
+(ido-mode t)
+
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
+
+;; Set locale to UTF8
+(set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; Own key bindings
+(global-set-key (kbd "C-c C-v") 'imenu)
 
 ;; ========== javascrpt ============
 (setq js-indent-level 2)
@@ -15,7 +35,7 @@
 ;; ======== auto saves =============
 (let ((my-auto-save-dir (locate-user-emacs-file "auto-save")))
   (setq auto-save-file-name-transforms
-        `((".*" ,(expand-file-name "\\2" my-auto-save-dir) t)))
+	`((".*" ,(expand-file-name "\\2" my-auto-save-dir) t)))
   (unless (file-exists-p my-auto-save-dir)
     (make-directory my-auto-save-dir)))
 (setq auto-save-default t
@@ -63,11 +83,11 @@
 ;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
-                (or (buffer-file-name) default-directory)
-                "node_modules"))
-         (eslint (and root
-                      (expand-file-name "node_modules/eslint/bin/eslint.js"
-                                        root))))
+		(or (buffer-file-name) default-directory)
+		"node_modules"))
+	 (eslint (and root
+		      (expand-file-name "node_modules/eslint/bin/eslint.js"
+					root))))
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
@@ -88,6 +108,8 @@
 (global-set-key (kbd "C-c a") 'mc/mark-all-symbols-like-this)
 
 (use-package magit :ensure t)
+
+(use-package buffer-move :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
