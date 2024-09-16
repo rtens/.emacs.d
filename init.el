@@ -6,12 +6,15 @@
 (setq user-full-name "Nikolas Martens")
 (setq user-mail-address "Nikolas.M@rtens.org")
 (setq root-directory default-directory)
+(setq require-final-newline t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (winner-mode 1)
 (electric-pair-mode 1)
 (global-subword-mode 1)
 (ido-mode t)
+(savehist-mode t)
+(pending-delete-mode t)
 
 ;; Keep buffers up-to-date
 (global-auto-revert-mode 1)
@@ -34,10 +37,12 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; Font size
 (set-frame-font (if (>= (display-pixel-width) 2500) "Menlo 20" "Menlo 12"))
 
 ;; Own key bindings
 (global-set-key (kbd "C-c C-v") 'imenu)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Toggle two most recent buffers
 (fset 'quick-switch-buffer [?\C-x ?b return])
@@ -92,11 +97,6 @@
   (display-line-numbers-mode 1)
   (goto-line (read-number "Goto line: ")))
     (display-line-numbers-mode -1)))
-
-;; Save point position between sessions
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 ;; ========== javascrpt ============
 (setq js-indent-level 2)
@@ -198,6 +198,14 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 (use-package buffer-move :ensure t)
+
+(use-package uniquify :ensure t)
+(setq uniquify-buffer-name-style 'forward)
+
+;; Save point position between sessions
+(use-package saveplace :ensure t)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 (provide 'init)
 ;;; init.el ends here
