@@ -7,6 +7,7 @@
 (setq user-mail-address "Nikolas.M@rtens.org")
 (setq root-directory default-directory)
 (setq require-final-newline t)
+(setq uniquify-buffer-name-style 'forward)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (winner-mode 1)
@@ -198,9 +199,6 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
 (use-package buffer-move :ensure t)
-
-(use-package uniquify :ensure t)
-(setq uniquify-buffer-name-style 'forward)
 
 ;; Save point position between sessions
 (use-package saveplace :ensure t)
