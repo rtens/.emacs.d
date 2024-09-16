@@ -214,6 +214,39 @@
 (use-package direx :ensure t)
 (global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
 
+(use-package js2-mode :ensure t
+  :mode (("\\.js$" . js2-mode))
+  :hook (js2-mode . (lambda ()
+                      (setq-default tab-width 2)
+                      (setq js-indent-level 2
+                            js2-basic-offset 2)
+                      (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+                      (add-to-list 'interpreter-mode-alist '("nodejs" . js2-mode))
+                      (js2-imenu-extras-mode)
+                      (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
+;;                      (flycheck-select-checker 'javascript-eslint)
+                      (flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+                      (setq-default flycheck-temp-prefix ".flycheck"
+                                    flycheck-disabled-checkers (append flycheck-disabled-checkers
+                                                                       '(javascript-jshint json-jsonlist)))))
+  :bind ((:map js2-mode-map
+               ("M-." . xref-find-definitions)
+               ("M-?" . xref-find-references))))
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+(global-set-key (kbd "C-c h H") 'hs-hide-all)
+(global-set-key (kbd "C-c h S") 'hs-show-all)
+(global-set-key (kbd "C-c h h") 'hs-hide-block)
+(global-set-key (kbd "C-c h s") 'hs-show-block)
+(defun my/hs-show-next-level ()
+  "Show only the next level."
+  (interactive)
+  (hs-show-block)
+  (hs-hide-level 0))
+(global-set-key (kbd "C-c h l") 'my/hs-show-next-level)
+
 ;; ====== init files cascade ======
 (dolist (init-file (list "~/.emacs.d/custom.el"
        "~/.emacs.d/custom-local.el"

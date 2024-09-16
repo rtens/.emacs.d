@@ -50,6 +50,7 @@ Init files (if existing) are loaded in this order:
     - search and replace `M-%`
         - with regex `C-M-%`
         - capture groups `\(.+\)` > `\1`
+    - comment lines
 - navigate in buffer
     - collapse everything
     - expand under point
