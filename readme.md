@@ -52,8 +52,9 @@ Init files (if existing) are loaded in this order:
         - capture groups `\(.+\)` > `\1`
     - comment lines `C-x /`
 - navigate in buffer
-    - collapse everything
-    - expand under point
+    - collapse everything `C-c h H`
+    - expand next level `C-c h l`
+    - expand block `C-c h s`
     - search for string `C-s`
     - jump to char
 - navigate in project
