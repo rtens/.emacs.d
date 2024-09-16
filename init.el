@@ -248,8 +248,8 @@
   (hs-hide-level 0))
 (global-set-key (kbd "C-c h l") 'my/hs-show-next-level)
 
-(use-package ace-jump-mode :ensure t)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(use-package avy :ensure t)
+(define-key global-map (kbd "C-c SPC") 'avy-goto-char-timer)
 
 ;; ====== init files cascade ======
 (dolist (init-file (list "~/.emacs.d/custom.el"

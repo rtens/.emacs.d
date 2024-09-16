@@ -55,7 +55,7 @@ Init files (if existing) are loaded in this order:
     - collapse everything `C-c h H`
     - expand next level `C-c h l`
     - expand block `C-c h s`
-    - search for string `C-s`
+    - search for string `C-s` `C-r`
     - jump to char `C-c SPC`
 - navigate in project
     - search file `C-x p f`
@@ -81,7 +81,6 @@ Init files (if existing) are loaded in this order:
 
 - expand-region
 - yasnippet
-- iy-go-to-char
 - dump-jump
 
 ## Open questions
