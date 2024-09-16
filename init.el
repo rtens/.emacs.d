@@ -248,6 +248,9 @@
   (hs-hide-level 0))
 (global-set-key (kbd "C-c h l") 'my/hs-show-next-level)
 
+(use-package ace-jump-mode :ensure t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; ====== init files cascade ======
 (dolist (init-file (list "~/.emacs.d/custom.el"
        "~/.emacs.d/custom-local.el"

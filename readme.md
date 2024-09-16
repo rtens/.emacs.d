@@ -56,7 +56,7 @@ Init files (if existing) are loaded in this order:
     - expand next level `C-c h l`
     - expand block `C-c h s`
     - search for string `C-s`
-    - jump to char
+    - jump to char `C-c SPC`
 - navigate in project
     - search file `C-x p f`
         - including line numbers
@@ -79,9 +79,6 @@ Init files (if existing) are loaded in this order:
 
 ## To explore
 
-- [jumping around](https://emacsrocks.com/e10.html)
-    - ace-jump-mode
-    - ido-imenu-push-mark
 - expand-region
 - yasnippet
 - iy-go-to-char
