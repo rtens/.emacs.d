@@ -28,10 +28,18 @@ Init files (if existing) are loaded in this order:
     - open/create file `C-x C-f`
     - save file `C-x C-s`
     - close buffer `C-x k`
+- windows
+    - split right `C-x 3`
+    - split down `C-x 2`
+    - next window `C-x o`
+    - close current window `C-x 0`
+    - close other windows `C-x 1`
+    - move buffer `C-s-ARROW`
+    - back/forward windows configs `C-x ARROW`
 - file management
-    - create folder `C-x d RET +`
-    - delete file `C-x d RET D`
-    - delete multiple files `C-x d RET m D`
+    - jump to project root `C-x C-j`
+    - create folder `+`
+    - delete file `D`
 - text manipulation
     - indent region
         - interactively `C-x TAB`
@@ -48,10 +56,16 @@ Init files (if existing) are loaded in this order:
     - search for string `C-s`
     - jump to char
 - navigate in project
-    - search file
+    - search file `C-x p f`
         - including line numbers
-    - full-text search
-- open shell `M-x term|shell|eshell`
+    - full-text search `C-x p g`
+- terminal
+    - open shell `M-x term|shell|eshell`
+    - goto error line
+- execution
+    - eval at point `C-x C-e`
+    - eval `M-:`
+    - repeat command `C-x z`
 - git `C-x g`
 - refactoring
 - snippets
@@ -60,17 +74,16 @@ Init files (if existing) are loaded in this order:
     - constructur
     - this/self
     - test
-- execute lisp `C-x C-e`
 
 ## To explore
 
-- [projectile](https://github.com/bbatsov/projectile)
 - [jumping around](https://emacsrocks.com/e10.html)
     - ace-jump-mode
     - ido-imenu-push-mark
 - expand-region
 - yasnippet
 - iy-go-to-char
+- dump-jump
 
 ## Open questions
 
@@ -98,7 +111,7 @@ Init files (if existing) are loaded in this order:
 - format buffer
     - javascript
     - python (using local config as in pre-commit hook)
-    - JSON (pretty)
+    - JSON `M-x js-json-mode RET M-x json-pretty-print-buffer`
 - automatically add import
 - remove unsused imports
 - comment multiple lines

@@ -8,12 +8,15 @@
 (setq root-directory default-directory)
 (setq require-final-newline t)
 (setq uniquify-buffer-name-style 'forward)
+(setq split-width-threshold 100)
+(setq create-lockfiles nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (winner-mode 1)
 (electric-pair-mode 1)
 (global-subword-mode 1)
 (ido-mode t)
+(fido-mode t)
 (savehist-mode t)
 (pending-delete-mode t)
 
@@ -131,15 +134,6 @@
 ;; ===== customization files ======
 (setq custom-file "~/.emacs.d/custom-local.el")
 
-;; ====== init files cascade ======
-(dolist (init-file (list "~/.emacs.d/custom.el"
-       "~/.emacs.d/custom-local.el"
-       "~/.emacs.d/init-local.el"
-       "./.emacs-project.el"
-       "./.emacs-local.el"))
-  (if (file-exists-p init-file)
-      (load-file init-file)))
-
 ;; ========== packages ============
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -209,6 +203,25 @@
 
 (use-package centered-window :ensure t)
 (centered-window-mode t)
+
+(use-package buffer-move :ensure t)
+(global-set-key (kbd "<C-s-up>")     'buf-move-up)
+(global-set-key (kbd "<C-s-down>")   'buf-move-down)
+(global-set-key (kbd "<C-s-left>")   'buf-move-left)
+(global-set-key (kbd "<C-s-right>")  'buf-move-right)
+(setq buffer-move-behavior 'move)
+
+(use-package direx :ensure t)
+(global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
+
+;; ====== init files cascade ======
+(dolist (init-file (list "~/.emacs.d/custom.el"
+       "~/.emacs.d/custom-local.el"
+       "~/.emacs.d/init-local.el"
+       "./.emacs-project.el"
+       "./.emacs-local.el"))
+  (if (file-exists-p init-file)
+      (load-file init-file)))
 
 (provide 'init)
 ;;; init.el ends here
