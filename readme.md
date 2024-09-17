@@ -86,42 +86,37 @@ Init files (if existing) are loaded in this order:
 
 ## To explore
 
+- projectile
 - yasnippet
-- dump-jump
+- dump-jump (cross plattform?)
 
-## Open questions
+## Still to figure out
 
+- speed up init time with use-package
+- setup snippets with yasnippet
+- projects (check out projectile)
+    - open project
+    - load project init file
+    - have multiple projects open
+- shortcut to restore tests in side window
 - register a window configuration
     - for the session?
     - for the project?
-- navigation in buffer
-    - collapse everything
-    - move to word / char quickly
-    - expand everything under point
-- full text search in project
-- jump to file in project (typing just about any part of its path)
 - indent multiple lines
-- browse with file tree
 - jump to error line
 - refactoring
     - javascript
     - python
 - quickly find methods of type
     - auto-complete for known type
-- jump between projects
-    - restore windows
-    - load project init file
-    - have multiple projects open
 - format buffer
     - javascript
     - python (using local config as in pre-commit hook)
     - JSON `M-x js-json-mode RET M-x json-pretty-print-buffer`
 - automatically add import
 - remove unsused imports
-- comment multiple lines
 - go to definition
 - find usages
 - jump back and forwards marks
-- move buffer to other/new window
 - change window by number
-- dir local instead of init file cascade
+- dir local instead of init file cascade?
