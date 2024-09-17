@@ -82,6 +82,8 @@
 (my/my-mode-key "C-M-u" '((backward-up-list) (down-list)))
 (my/my-mode-key "C-M-o" '((backward-up-list) (forward-sexp) (left-char)))
 
+(my/my-mode-key "C-q" '((undo)))
+(my/my-mode-key "S-C-q" '((undo-redo)))
 
 (provide 'my-mode)
 ;;; my-mode.el ends here

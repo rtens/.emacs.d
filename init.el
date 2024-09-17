@@ -94,7 +94,7 @@
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 
 ;; Goto line with help
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
+(global-set-key (kbd "C-b") 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
@@ -174,11 +174,13 @@
 
 (use-package multiple-cursors :ensure t)
 (global-set-key (kbd "C-c c") 'mc/edit-lines)
-(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c f") 'mc/mark-next-like-this-symbol)
-(global-set-key (kbd "C-c b") 'mc/mark-previous-like-this-symbol)
-(global-set-key (kbd "C-c a") 'mc/mark-all-symbols-like-this)
+(global-set-key (kbd "C-c C-k") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c C-i") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c s-l") 'mc/mark-next-like-this-word)
+(global-set-key (kbd "C-c s-j") 'mc/mark-previous-like-this-word)
+(global-set-key (kbd "C-c C-s-l") 'mc/mark-next-like-this-symbol)
+(global-set-key (kbd "C-c C-s-j") 'mc/mark-previous-like-this-symbol)
+(global-set-key (kbd "C-c C-s-o") 'mc/mark-all-symbols-like-this)
 
 (use-package magit :ensure t)
 
@@ -250,7 +252,8 @@
 (global-set-key (kbd "C-c h l") 'my/hs-show-next-level)
 
 (use-package avy :ensure t)
-(define-key global-map (kbd "C-c SPC") 'avy-goto-char-timer)
+(define-key global-map (kbd "C-a") 'avy-goto-char-timer)
+(setq avy-timeout-seconds 0.3)
 
 (use-package expand-region :ensure t)
 (global-set-key (kbd "C-c g") 'er/expand-region)

@@ -53,8 +53,8 @@ And the actions and their keys are
 
 #### Jumping
 
-- `C-a` jump to character *TODO*
-- goto line *TODO*
+- `C-a` jump to character
+- `C-b` goto line
 - `C-s` search forward
 - `C-r` search backwards
 
@@ -70,7 +70,7 @@ And the actions and their keys are
 - `S-` mark with next move *TODO*
 - `C-SPC` set mark/deactivate mark
 - `C-g` quit/deactivate mark
-- `C-c` add cursor with next move *TODO*
+- `C-c` add cursor with next move
 - move back/forward in mark ring *TODO*
 - expand region *TODO*
 
@@ -87,8 +87,8 @@ And the actions and their keys are
 
 #### History
 
-- `C-q` undo *TODO*
-- `S-C-q` redo *TODO*
+- `C-q` undo
+- `S-C-q` redo
 - `s-q` show undo tree *TODO*
 
 #### Moving Text
@@ -142,6 +142,7 @@ Invoked with prefix `C-x`
     - close other windows `C-x 1`
     - split down `C-x 2`
     - split right `C-x 3`
+    - switch buffer in other window `C-x 4 b`
     - switch window `C-x o` *TODO*
 - file management
     - jump to project root `C-x C-j`
