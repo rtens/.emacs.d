@@ -21,6 +21,69 @@ Init files (if existing) are loaded in this order:
 - `./.emacs-project.el` - settings for the project
 - `./.emacs-local.el` - local setting for the project (add to .gitignore)
 
+
+## Commands
+
+All commands that I'm actually using.
+
+### Keybound
+
+#### Basic
+
+Invoked without a prefix.
+
+Pattern:
+- `C-KEY` does a thing
+- `M-KEY` does that thing "bigger"
+- `s-KEY` does it even "bigger"
+- `S-` does it in the other direction
+
+#### Editing
+
+- adding
+    - `CHAR` insert char at point
+    - `RET` add new line at point
+    - `C-RET` add new line below current line
+    - `S-C-RET` add new line above current line
+- removing
+    - `C-d` delete previous char
+    - `S-C-d` delete next char
+    - `M-d` kill previous word
+    - `S-M-d` kill next word
+    - `C-M-d` kill previous S-expression
+    - `S-C-M-d` kill next S-expression
+    - `C-k` kill until end of line
+    - `S-C-k` kill until beginning of line
+- kill ring
+    - `M-w` copy region
+    - `C-w` kill region
+    - `S-C-w` kill region and extend ring
+    - `S-M-w` copy region and extend ring
+    - `C-y` yank last in ring
+    - `M-y` yank next in ring
+    - show kill ring
+- undoing
+    - undo
+    - redo
+    - show undo tree
+- moving
+    - `TAB` indent current line
+
+#### Selection
+
+#### Buffer Navigation
+
+### Extendend
+
+Invoked with prefix `C-x`
+
+- `g` show Magit status window
+
+### Other
+
+Invoked with `M-x`
+
+
 ## Cheat sheet
 
 - basics
@@ -92,6 +155,7 @@ Init files (if existing) are loaded in this order:
 
 ## Still to figure out
 
+- map modifiers on Mac to [C], [s], [M]
 - speed up init time with use-package
 - setup snippets with yasnippet
 - projects (check out projectile)
