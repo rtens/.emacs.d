@@ -19,6 +19,7 @@
 (fido-mode t)
 (savehist-mode t)
 (pending-delete-mode t)
+(global-visual-line-mode t)
 
 ;; Keep buffers up-to-date
 (global-auto-revert-mode 1)

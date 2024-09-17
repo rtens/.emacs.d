@@ -26,126 +26,153 @@ Init files (if existing) are loaded in this order:
 
 All commands that I'm actually using.
 
-### Keybound
-
-#### Basic
+### Basic
 
 Invoked without a prefix.
 
-Pattern:
-- `C-KEY` does a thing
-- `M-KEY` does that thing "bigger"
-- `s-KEY` does it even "bigger"
-- `S-` does it in the other direction
+#### Moving
 
-#### Editing
+Movement is based on units and actions on the unit. Each unit is associated with a modifier, and each action with a key.
 
-- adding
-    - `CHAR` insert char at point
-    - `RET` add new line at point
-    - `C-RET` add new line below current line
-    - `S-C-RET` add new line above current line
-- removing
-    - `C-d` delete previous char
-    - `S-C-d` delete next char
-    - `M-d` kill previous word
-    - `S-M-d` kill next word
-    - `C-M-d` kill previous S-expression
-    - `S-C-M-d` kill next S-expression
-    - `C-k` kill until end of line
-    - `S-C-k` kill until beginning of line
-- kill ring
-    - `M-w` copy region
-    - `C-w` kill region
-    - `S-C-w` kill region and extend ring
-    - `S-M-w` copy region and extend ring
-    - `C-y` yank last in ring
-    - `M-y` yank next in ring
-    - show kill ring
-- undoing
-    - undo
-    - redo
-    - show undo tree
-- moving
-    - `TAB` indent current line
+The units and their modifiers are
+- `C` row/column/character
+- `s` word
+- `M` line/buffer
+- `C-s` symbol
+- `C-M` s-expression
 
-#### Selection
+And the actions and their keys are
+- `j` left/prev
+- `l` right/next
+- `i` up/out
+- `k` down/in
+- `u` beginning
+- `o` end
+- `d` delete *TODO*
+- `e` duplicate *TODO*
 
-#### Buffer Navigation
+#### Jumping
+
+- `C-a` jump to character *TODO*
+- goto line *TODO*
+- `C-s` search forward
+- `C-r` search backwards
+
+#### Folding
+
+- collapse everything `C-c h H` *TODO*
+- expand next level `C-c h l` *TODO*
+- expand block `C-c h s` *TODO*
+- expand everything `C-c h S` *TODO*
+
+#### Marking
+
+- `S-` mark with next move *TODO*
+- `C-SPC` set mark/deactivate mark
+- `C-g` quit/deactivate mark
+- `C-c` add cursor with next move *TODO*
+- move back/forward in mark ring *TODO*
+- expand region *TODO*
+
+#### Killing
+
+- `C-d` delete region / with next move *TODO*
+- `C-w` kill region / with next move *TODO*
+- `S-C-w` extend kill region / with next move *TODO*
+- `M-w` copy region
+- `S-M-w` extend copy region / with next move *TODO*
+- `C-y` yank last kill
+- `M-y` yank next kill
+- `s-y` show kill ring *TODO*
+
+#### History
+
+- `C-q` undo *TODO*
+- `S-C-q` redo *TODO*
+- `s-q` show undo tree *TODO*
+
+#### Moving Text
+
+- `C-v i/k` move line/region up/down *TODO*
+- `C-v j/l` move line/region left/right *TODO*
+- `C-RET` insert line below current
+- `S-C-RET` insert line above current
+
+#### Scrolling
+
+- `C-v i/k` scroll one line up/down *TODO*
+- `C-v j/l` scroll one column left/right *TODO*
+- `S-C-v i/k` scroll page up/down *TODO*
+- `S-C-v j/l` scroll page left/right *TODO*
+- `C-f` move point to top/center/bottom *TODO*
+
+#### Buffers
+
+- move buffer `C-s-ARROW` *TODO*
+- back/forward windows configs `C-x ARROW` *TODO*
+- toggle buffer *TODO*
 
 ### Extendend
 
 Invoked with prefix `C-x`
 
-- `g` show Magit status window
 
-### Other
+#### Editing
 
-Invoked with `M-x`
+- search and replace `M-%` *TODO*
+- search and replace with regex `C-M-%` (capture `\(.+\)` > `\1`) *TODO*
+- comment lines `C-x /` *TODO*
 
+#### Other
 
-## Cheat sheet
+- `r q` exit *TODO*
+- `g` show Magit status
+- open/create file `C-x C-f`
+- save file `C-x C-s`
+- save some files `C-x s`
+- close buffer `C-x k`
+- change buffer `C-x b`
+- show buffer list `C-x C-b`
+- imenu `C-x i`
+- format buffer `C-x f` *TODO*
+- cleanup buffer `C-x c` *TODO*
 
-- basics
-    - exit `C-x C-c`
-    - open/create file `C-x C-f`
-    - save file `C-x C-s`
-    - close buffer `C-x k`
 - windows
-    - split right `C-x 3`
-    - split down `C-x 2`
-    - next window `C-x o`
     - close current window `C-x 0`
     - close other windows `C-x 1`
-    - move buffer `C-s-ARROW`
-    - back/forward windows configs `C-x ARROW`
+    - split down `C-x 2`
+    - split right `C-x 3`
+    - switch window `C-x o` *TODO*
 - file management
     - jump to project root `C-x C-j`
     - create folder `+`
     - delete file `D`
-- text manipulation
-    - indent region
-        - interactively `C-x TAB`
-        - by 2 space in and out
-    - duplicate lines `C-M-UP/DOWN`
-    - move line `M-UP/DOWN`
-    - kill line `C-k C-k`
-    - search and replace `M-%`
-        - with regex `C-M-%`
-        - capture groups `\(.+\)` > `\1`
-    - comment lines `C-x /`
-- cursor
-    - multi cursor
-        - per line in region `C-c c`
-        - next like this or line `C-c n/p`
-        - next symbol `C-c f/b`
-        - all symbols `C-c a`
-    - expand region `C-c g`
-- navigate in buffer
-    - collapse everything `C-c h H`
-    - expand next level `C-c h l`
-    - expand block `C-c h s`
-    - search for string `C-s` `C-r`
-    - jump to char `C-c SPC`
 - navigate in project
     - search file `C-x p f`
-        - including line numbers
+    - open file at line *TODO*
     - full-text search `C-x p g`
 - terminal
     - open shell `M-x term|shell|eshell`
     - goto error line
 - execution
     - eval at point `C-x C-e`
-    - eval `M-:`
+    - eval `C-x M-e` *TODO*
     - repeat command `C-x z`
-- git `C-x g`
-- refactoring
+
+### Unbound
+
+Invoked with `M-x`
+
+- eval-buffer
+- refactoring *TODO*
 - snippets
     - class
     - method
     - constructur
     - this/self
     - test
+
+
 
 ## To explore
 
@@ -155,7 +182,7 @@ Invoked with `M-x`
 
 ## Still to figure out
 
-- map modifiers on Mac to [C], [s], [M]
+- how to scroll without moving the point
 - speed up init time with use-package
 - setup snippets with yasnippet
 - projects (check out projectile)
@@ -179,8 +206,8 @@ Invoked with `M-x`
     - JSON `M-x js-json-mode RET M-x json-pretty-print-buffer`
 - automatically add import
 - remove unsused imports
-- go to definition
-- find usages
+- go to definition of symbol
+- find usages of symbol
 - jump back and forwards marks
 - change window by number
 - dir local instead of init file cascade?
