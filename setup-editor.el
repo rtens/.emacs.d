@@ -22,3 +22,64 @@
 
 ;; Overwrite selected region
 (pending-delete-mode t)
+
+
+;; Keybindings for movements
+
+;; Units
+(defvar char "C-")
+(defvar word "s-")
+(defvar symbol "C-s-")
+(defvar line "M-")
+(defvar sexp "C-M-")
+
+;; Actions
+(defvar left "l")
+(defvar right "ä")
+(defvar up "p")
+(defvar down "ö")
+(defvar begin "o")
+(defvar end "ü")
+(defvar del "k")
+(defvar dup-up "+")
+(defvar dup-down "#")
+
+;; Move by row
+(my-key "row-up" (concat char up) '(previous-line))
+(my-key "row-down" (concat char down) '(next-line))
+(my-key "column-left" (concat char left) '(left-char))
+(my-key "column-right" (concat char right) '(right-char))
+(my-key "column-begin" (concat char begin) '(beginning-of-visual-line))
+(my-key "column-end" (concat char end) '(end-of-visual-line))
+
+;; Move by word
+(my-key "word-left" (concat word left) '(right-char) '(backward-to-word 1) '(left-word))
+(my-key "word-right" (concat word right) '(forward-to-word 1))
+(my-key "word-begin" (concat word begin) '(right-char) '(left-word))
+(my-key "word-end" (concat word end) '(left-char) '(right-word))
+
+;; Move by symbol
+(my-key "symbol-left" (concat symbol left) '(right-char) '(forward-symbol -2))
+(my-key "symbol-right" (concat symbol right) '(forward-symbol 2) '(forward-symbol -1))
+(my-key "symbol-begin" (concat symbol begin) '(right-char) '(forward-symbol -1))
+(my-key "symbol-end" (concat symbol end) '(left-char) '(forward-symbol 1))
+
+;; Move by line
+(my-key "line-left" (concat line left) '(forward-line -1))
+(my-key "line-right" (concat line right) '(forward-line 1))
+(my-key "line-up" (concat line up) '(scroll-down))
+(my-key "line-down" (concat line down) '(scroll-up))
+(my-key "line-begin" (concat line begin) '(beginning-of-buffer))
+(my-key "line-end" (concat line end) '(end-of-buffer))
+
+;; Move by s-expression
+(my-key "sexp-left" (concat sexp left) '(backward-sexp))
+(my-key "sexp-right" (concat sexp right) '(forward-sexp 2) '(backward-sexp))
+(my-key "sexp-up" (concat sexp up) '(backward-up-list))
+(my-key "sexp-down" (concat sexp down) '(down-list))
+(my-key "sex-begin" (concat sexp begin) '(backward-up-list) '(down-list))
+(my-key "sexp-end" (concat sexp end) '(backward-up-list) '(forward-sexp) '(left-char))
+
+;; Undo and redo
+(my-key "undo" "C-q" '(undo))
+(my-key "redo" "S-C-q" '(undo-redo))

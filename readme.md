@@ -158,7 +158,9 @@ Invoked with prefix `C-x`
     - goto error line
 - execution
     - eval at point `C-x C-e`
-    - eval `C-x M-e` *TODO*
+    - eval region
+    - eval buffer
+    - eval... `C-x M-e` *TODO*
     - repeat command `C-x z`
 
 ### Unbound

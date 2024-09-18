@@ -17,6 +17,7 @@
 (setup "archives")
 (setup "behavior")
 (setup "user-interface")
+(setup "my-mode")
 (setup "editor")
 (setup "appearance")
 (setup "tool-magit")
@@ -30,7 +31,7 @@
 ;; Load custom file again to overwrite other settings
 (if (file-exists-p custom-file) (load custom-file))
 
-;; Load project and user init files if existing
+;; Load user init files if existing
 (let ((init-user (expand-file-name "init-user.el" user-emacs-directory)))
   (if (file-exists-p init-user)
       (load-file init-user)))

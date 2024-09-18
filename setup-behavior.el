@@ -3,7 +3,7 @@
 (setq desktop-restore-eager 2)
 
 ;; Split window to the right by default
-(setq split-width-threshold 100)
+(setq split-width-threshold 200)
 
 ;; Answer yes/no question with y/n
 (fset 'yes-or-no-p 'y-or-n-p)
