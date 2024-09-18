@@ -23,6 +23,11 @@
 ;; Overwrite selected region
 (pending-delete-mode t)
 
+;; Jump to chars
+(use-package avy
+  :ensure t
+  :config (global-set-key (kbd "C-a") 'avy-goto-char-2))
+
 
 ;; Keybindings for movements
 
@@ -40,9 +45,6 @@
 (defvar down "ö")
 (defvar begin "o")
 (defvar end "ü")
-(defvar del "k")
-(defvar dup-up "+")
-(defvar dup-down "#")
 
 ;; Move by row
 (my-key "row-up" (concat char up) '(previous-line))
