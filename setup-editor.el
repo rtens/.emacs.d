@@ -11,7 +11,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; Use unix-style line endings (LF)
-(Setq-default buffer-file-coding-system 'utf-8-unix)
+(set-default buffer-file-coding-system 'utf-8-unix)
 
 ;; Cleanup whitespaces on save
 (add-hook 'before-save-hook 'whitespace-cleanup)

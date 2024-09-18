@@ -9,6 +9,7 @@ Here are a couple of good sources
 - [emacsrocks (magnars)](https://github.com/magnars/.emacs.d/)
 - [emacs4developers](https://github.com/pierre-lecocq/emacs.d)
 - [Parens of the Dead](https://www.parens-of-the-dead.com/)
+- [redguardtoo](https://github.com/redguardtoo/Emacs.d)
 
 ## Init cascade
 
