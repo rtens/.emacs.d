@@ -9,3 +9,8 @@
 
 ;; Show folder for files with same names
 (setq uniquify-buffer-name-style 'forward)
+
+;; Auto-complete
+(use-package auto-complete
+  :ensure t
+  :config (global-auto-complete-mode t))
