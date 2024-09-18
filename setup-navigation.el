@@ -16,9 +16,16 @@
 
 ;; Folding
 (add-hook 'prog-mode-hook #'hs-minor-mode)
-(my-key "hide-all" "C-v C-o" '(hs-hide-all))
-(my-key "show-all" "C-v C-ü" '(hs-show-all))
-(my-key "hide-block" "C-v C-p" '(hs-hide-block))
-(my-key "show-block" "C-v C-ö" '(hs-show-block))
-(my-key "hide-level" "C-v C-l" '(hs-hide-block))
-(my-key "show-next-level" "C-v C-ä" '(hs-show-block) '(hs-hide-level 0))
+(my-key "hide-all" "C-v C-o"
+	'(hs-hide-all))
+(my-key "show-all" "C-v C-ü"
+	'(hs-show-all))
+(my-key "hide-block" "C-v C-p"
+	'(hs-hide-block))
+(my-key "show-block" "C-v C-ö"
+	'(hs-show-block))
+(my-key "hide-level" "C-v C-l"
+	'(hs-hide-block))
+(my-key "show-next-level" "C-v C-ä"
+	'(hs-show-block)
+	'(hs-hide-level 0))
