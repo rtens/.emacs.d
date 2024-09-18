@@ -15,3 +15,4 @@ url
 /.cache/
 /custom-user.el
 /init-user.el
+/server/
