@@ -15,9 +15,9 @@
 (setq create-lockfiles nil)
 
 ;; Keep auto-save files in central folder
-(let ((my-auto-save-dir (expand-file-name "auto-save" user-emacs-directory)))
+(let ((my-auto-save-dir (expand-file-name "auto-save/" user-emacs-directory)))
   (setq auto-save-file-name-transforms
-  `((".*" ,(expand-file-name "\\2" my-auto-save-dir) t)))
+  `((".*" ,(concat my-auto-save-dir "\\2") t)))
   (unless (file-exists-p my-auto-save-dir)
     (make-directory my-auto-save-dir)))
 (setq auto-save-default t
