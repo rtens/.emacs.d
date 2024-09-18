@@ -19,6 +19,7 @@
 (setup "user-interface")
 (setup "my-mode")
 (setup "editor")
+(setup "navigation")
 (setup "appearance")
 (setup "tool-magit")
 

@@ -23,12 +23,6 @@
 ;; Overwrite selected region
 (pending-delete-mode t)
 
-;; Jump to chars
-(use-package avy
-  :ensure t
-  :config (global-set-key (kbd "C-a") 'avy-goto-char-2))
-
-
 ;; Keybindings for movements
 
 ;; Units
