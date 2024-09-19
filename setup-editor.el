@@ -31,10 +31,10 @@
 
 ;; Units
 (defvar char "C-")
-(defvar word "s-")
-(defvar symbol "C-M-")
-(defvar line "M-")
-(defvar sexp "C-s-")
+(defvar word "M-")
+(defvar symbol "s-")
+(defvar sexp "C-M-")
+(defvar line "C-s-")
 
 ;; Actions
 (defvar left "l")
