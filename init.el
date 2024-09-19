@@ -4,10 +4,13 @@
 
 ;; Function for loading other init files
 (defun setup (file)
-  "Import a file from the emacs directory."
-  (load-file (expand-file-name
-	      (concat "setup-" file ".el")
-	      user-emacs-directory)))
+	"Import a file from the emacs directory."
+	(load-file (expand-file-name
+				(concat "setup-" file ".el")
+				user-emacs-directory)))
+
+;; Turn off the lights
+(set-background-color "black")
 
 ;; Set and load customization file
 (setq custom-file (expand-file-name "custom-user.el" user-emacs-directory))
@@ -26,14 +29,14 @@
 
 ;; Load system-specific init files
 (if (eq system-type 'darwin)
-    (setup "system-mac"))
+		(setup "system-mac"))
 (if (eq system-type 'windows-nt)
-    (setup "system-windows"))
+		(setup "system-windows"))
 
 ;; Load custom file again to overwrite other settings
 (if (file-exists-p custom-file) (load custom-file))
 
 ;; Load user init files if existing
 (let ((init-user (expand-file-name "init-user.el" user-emacs-directory)))
-  (if (file-exists-p init-user)
-      (load-file init-user)))
+	(if (file-exists-p init-user)
+			(load-file init-user)))
