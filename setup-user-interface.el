@@ -11,6 +11,9 @@
 (ido-mode t)
 (fido-mode t)
 
+;; Make URLs clickable (and open with `C-c RET`)
+(global-goto-address-mode t)
+
 ;; Echo unfinished commands immediately
 (setq echo-keystrokes 0.02)
 
@@ -19,5 +22,5 @@
 
 ;; Auto-complete
 (use-package auto-complete
-  :ensure t
-  :config (global-auto-complete-mode t))
+	:ensure t
+	:config (global-auto-complete-mode t))
