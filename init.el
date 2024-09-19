@@ -22,6 +22,7 @@
 (setup "navigation")
 (setup "appearance")
 (setup "tool-magit")
+(setup "tool-direx")
 
 ;; Load system-specific init files
 (if (eq system-type 'darwin)
