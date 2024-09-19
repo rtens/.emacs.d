@@ -3,4 +3,4 @@
 (setq w32-apps-modifier 'super)
 
 ;; Use a nice font
-(set-frame-font "DejaVu Sans #Mono-10")
+(set-frame-font "DejaVu Sans Mono-10")
