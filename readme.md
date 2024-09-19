@@ -139,29 +139,29 @@ Invoked with prefix `C-x`
 - cleanup buffer `C-x c` *TODO*
 
 - windows
-    - close current window `C-x 0`
-    - close other windows `C-x 1`
-    - split down `C-x 2`
-    - split right `C-x 3`
-    - switch buffer in other window `C-x 4 b`
-    - switch window `C-x o` *TODO*
+		- close current window `C-x 0`
+		- close other windows `C-x 1`
+		- split down `C-x 2`
+		- split right `C-x 3`
+		- switch buffer in other window `C-x 4 b`
+		- switch window `C-x o` *TODO*
 - file management
-    - jump to project root `C-x C-j`
-    - create folder `+`
-    - delete file `D`
+		- jump to project root `C-x C-j`
+		- create folder `+`
+		- delete file `D`
 - navigate in project
-    - search file `C-x p f`
-    - open file at line *TODO*
-    - full-text search `C-x p g`
+		- search file `C-x p f`
+		- open file at line *TODO*
+		- full-text search `C-x p g`
 - terminal
-    - open shell `M-x term|shell|eshell`
-    - goto error line
+		- open shell `M-x term|shell|eshell`
+		- goto error line
 - execution
-    - eval at point `C-x C-e`
-    - eval region
-    - eval buffer
-    - eval... `C-x M-e` *TODO*
-    - repeat command `C-x z`
+		- eval at point `C-x C-e`
+		- eval region
+		- eval buffer
+		- eval... `C-x M-e` *TODO*
+		- repeat command `C-x z`
 
 ### Unbound
 
@@ -170,11 +170,11 @@ Invoked with `M-x`
 - eval-buffer
 - refactoring *TODO*
 - snippets
-    - class
-    - method
-    - constructur
-    - this/self
-    - test
+		- class
+		- method
+		- constructur
+		- this/self
+		- test
 
 
 
@@ -190,24 +190,24 @@ Invoked with `M-x`
 - speed up init time with use-package
 - setup snippets with yasnippet
 - projects (check out projectile)
-    - open project
-    - load project init file
-    - have multiple projects open
+		- open project
+		- load project init file
+		- have multiple projects open
 - shortcut to restore tests in side window
 - register a window configuration
-    - for the session?
-    - for the project?
+		- for the session?
+		- for the project?
 - indent multiple lines
 - jump to error line
 - refactoring
-    - javascript
-    - python
+		- javascript
+		- python
 - quickly find methods of type
-    - auto-complete for known type
+		- auto-complete for known type
 - format buffer
-    - javascript
-    - python (using local config as in pre-commit hook)
-    - JSON `M-x js-json-mode RET M-x json-pretty-print-buffer`
+		- javascript
+		- python (using local config as in pre-commit hook)
+		- JSON `M-x js-json-mode RET M-x json-pretty-print-buffer`
 - automatically add import
 - remove unsused imports
 - go to definition of symbol
