@@ -1,3 +1,7 @@
+;; Use tabs
+(setq-default indent-tabs-mode t)
+(setq-default tab-width 2)
+
 ;; Make pairs close automatically
 (electric-pair-mode 1)
 (setq electric-pair-pairs (append electric-pair-pairs '((?` . ?`))))

@@ -11,6 +11,9 @@
 (ido-mode t)
 (fido-mode t)
 
+;; Echo unfinished commands immediately
+(setq echo-keystrokes 0.02)
+
 ;; Show folder for files with same names
 (setq uniquify-buffer-name-style 'forward)
 
