@@ -1,3 +1,7 @@
+;; Change quit key
+(global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
+(global-unset-key (kbd "C-x C-c"))
+
 ;; Don't beep, flash instead
 (setq ring-bell-function (lambda ()
 	 (invert-face 'mode-line)

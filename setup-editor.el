@@ -119,11 +119,11 @@
 (my-key-one "S-C-q" 'undo-redo)
 
 ;; Insert new line
-(my-key "insert-line-below" "<C-enter>"
+(my-key "insert-line-below" "C-<return>"
 	'(end-of-line)
 	'(newline)
 	'(indent-for-tab-command))
-(my-key "insert-line-below" "<S-C-enter>"
+(my-key "insert-line-above" "S-C-<return>"
 	'(beginning-of-line)
 	'(newline)
 	'(forward-line -1)
@@ -133,6 +133,8 @@
 (my-key-one "C-M-s" 'query-replace)
 (my-key-one "C-M-r" 'query-replace-regexp)
 
-;; Duplicate Line
+;; Comment-line
+(my-key-one "C-/" 'comment-line)
 
-;; Killing
+;; Recenter point
+(my-key-one "C-f" 'recenter-top-bottom)
