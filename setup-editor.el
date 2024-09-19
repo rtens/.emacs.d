@@ -131,6 +131,12 @@
 	'(forward-line -1)
 	'(indent-for-tab-command))
 
+;; Search and replace
+(my-key "search-replace" "C-M-s"
+	'(query-replace))
+(my-key "search-replace-regex" "C-M-r"
+	'(query-replace-regexp))
+
 ;; Duplicate Line
 
 ;; Killing
