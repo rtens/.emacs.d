@@ -1,7 +1,9 @@
 ;; Jump to chars
 (use-package avy
   :ensure t
-  :config (global-set-key (kbd "C-a") 'avy-goto-char-2))
+  :config
+  (global-set-key (kbd "C-a") 'avy-goto-char-timer)
+  (setq avy-timeout-seconds 0.25))
 
 ;; Goto line with help
 (global-set-key (kbd "C-b") 'goto-line-with-feedback)
@@ -16,16 +18,16 @@
 
 ;; Folding
 (add-hook 'prog-mode-hook #'hs-minor-mode)
-(my-key "hide-all" "C-v C-o"
+(my-key "hide-all" "C-v o"
 	'(hs-hide-all))
-(my-key "show-all" "C-v C-ü"
+(my-key "show-all" "C-v ü"
 	'(hs-show-all))
-(my-key "hide-block" "C-v C-p"
+(my-key "hide-block" "C-v p"
 	'(hs-hide-block))
-(my-key "show-block" "C-v C-ö"
+(my-key "show-block" "C-v ö"
 	'(hs-show-block))
-(my-key "hide-level" "C-v C-l"
+(my-key "hide-level" "C-v l"
 	'(hs-hide-block))
-(my-key "show-next-level" "C-v C-ä"
+(my-key "show-next-level" "C-v ä"
 	'(hs-show-block)
 	'(hs-hide-level 0))
