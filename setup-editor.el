@@ -115,10 +115,8 @@
 	'(left-char))
 
 ;; Undo and redo
-(my-key "undo" "C-q"
-	'(undo))
-(my-key "redo" "S-C-q"
-	'(undo-redo))
+(my-key-one "C-q" 'undo)
+(my-key-one "S-C-q" 'undo-redo)
 
 ;; Insert new line
 (my-key "insert-line-below" "<C-enter>"
@@ -132,10 +130,8 @@
 	'(indent-for-tab-command))
 
 ;; Search and replace
-(my-key "search-replace" "C-M-s"
-	'(query-replace))
-(my-key "search-replace-regex" "C-M-r"
-	'(query-replace-regexp))
+(my-key-one "C-M-s" 'query-replace)
+(my-key-one "C-M-r" 'query-replace-regexp)
 
 ;; Duplicate Line
 

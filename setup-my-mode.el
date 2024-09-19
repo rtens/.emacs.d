@@ -33,4 +33,7 @@
 
 (defun my-key (name key &rest commands)
   (defalias (intern (concat "my-" name)) (append '(lambda () (interactive)) commands)
-  (define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
+    (define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
+
+(defun my-key-one (key command)
+  (define-key my-mode-map (kbd key) command))
