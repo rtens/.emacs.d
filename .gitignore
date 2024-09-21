@@ -17,3 +17,4 @@ url
 /init-user.el
 /server/
 *.elc
+/projectile-bookmarks.eld

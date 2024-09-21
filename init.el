@@ -26,6 +26,7 @@
 (setup "appearance")
 (setup "tool-magit")
 (setup "tool-direx")
+(setup "tool-projectile")
 
 ;; Load system-specific init files
 (if (eq system-type 'darwin)
