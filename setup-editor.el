@@ -137,8 +137,8 @@
 (my-key-one "C-M-s" 'query-replace)
 (my-key-one "C-M-r" 'query-replace-regexp)
 
-;; Comment-line
-(my-key-one "C-/" 'comment-line)
-
 ;; Recenter point
 (my-key-one "C-f" 'recenter-top-bottom)
+
+;; Comment-line
+(my-key-one "C-x c" 'comment-line)
