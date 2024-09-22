@@ -23,10 +23,12 @@
 (setup "my-mode")
 (setup "editor")
 (setup "navigation")
-(setup "appearance")
+
 (setup "tool-magit")
 (setup "tool-direx")
 (setup "tool-projectile")
+
+(setup "appearance")
 
 ;; Load system-specific init files
 (if (eq system-type 'darwin)
