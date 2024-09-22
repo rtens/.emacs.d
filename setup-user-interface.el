@@ -8,8 +8,17 @@
 	 (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
 ;; Better tab-completion
-(ido-mode t)
-(fido-mode t)
+(use-package flx-ido
+	:ensure t
+	:config
+	(ido-mode 1)
+	(fido-mode t)
+	(ido-everywhere 1)
+	(flx-ido-mode 1)
+
+	;; disable ido faces to see flx highlights.
+	(setq ido-enable-flex-matching t)
+	(setq ido-use-faces nil))
 
 ;; Make URLs clickable (and open with `C-c RET`)
 (global-goto-address-mode t)
