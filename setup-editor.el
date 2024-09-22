@@ -142,3 +142,26 @@
 
 ;; Comment-line
 (my-key-one "C-x c" 'comment-line)
+
+;; Multi-cursor
+(use-package multiple-cursors
+	:ensure t
+	:config
+	(let ((prefix "C-j "))
+		(my-key-one (concat prefix "j")
+								'mc/edit-lines)
+		(my-key-one (concat prefix char right)
+								'mc/mark-next-like-this)
+		(my-key-one (concat prefix char left)
+								'mc/mark-previous-like-this)
+		(my-key-one (concat prefix word right)
+								'mc/mark-next-like-this-word)
+		(my-key-one (concat prefix word left)
+								'mc/mark-previous-like-this-word)
+		(my-key-one (concat prefix symbol right)
+								'mc/mark-next-like-this-symbol)
+		(my-key-one (concat prefix symbol left)
+								'mc/mark-previous-like-this-symbol)
+		(my-key-one (concat prefix symbol end)
+								'mc/mark-all-symbols-like-this)
+		))
