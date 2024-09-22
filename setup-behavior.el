@@ -11,26 +11,29 @@
 ;; Keep buffers up-to-date
 (global-auto-revert-mode 1)
 
+;; Don't ask about killing processes on exit
+(setq confirm-kill-processes nil)
+
 ;; Don't crate lock files (eg .#foo#)
 (setq create-lockfiles nil)
 
 ;; Keep auto-save files in central folder
 (let ((my-auto-save-dir (expand-file-name "auto-save/" user-emacs-directory)))
-  (setq auto-save-file-name-transforms
-  `((".*" ,(concat my-auto-save-dir "\\2") t)))
-  (unless (file-exists-p my-auto-save-dir)
-    (make-directory my-auto-save-dir)))
+	(setq auto-save-file-name-transforms
+	`((".*" ,(concat my-auto-save-dir "\\2") t)))
+	(unless (file-exists-p my-auto-save-dir)
+		(make-directory my-auto-save-dir)))
 (setq auto-save-default t
-      auto-save-timeout 10
-      auto-save-interval 200)
+			auto-save-timeout 10
+			auto-save-interval 200)
 
 ;; Keep backup files in central folder
 (let ((my-backup-dir (expand-file-name "backups" user-emacs-directory)))
-  (setq backup-directory-alist `(("." . ,my-backup-dir)))
-  (unless (file-exists-p my-backup-dir)
-    (make-directory my-backup-dir)))
+	(setq backup-directory-alist `(("." . ,my-backup-dir)))
+	(unless (file-exists-p my-backup-dir)
+		(make-directory my-backup-dir)))
 (setq backup-by-copying t
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t)
+			delete-old-versions t
+			kept-new-versions 6
+			kept-old-versions 2
+			version-control t)
