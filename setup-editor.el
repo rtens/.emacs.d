@@ -27,6 +27,9 @@
 ;; Overwrite selected region
 (pending-delete-mode t)
 
+;; Set mark
+(my-key-one "M-q" 'set-mark-command)
+
 ;; Keybindings for movements
 
 ;; Units
@@ -151,9 +154,12 @@
 				'(my-word-end)
 				'(kill-region nil nil t))
 
+;; Copy
+(my-key-one "C-w" 'kill-ring-save)
+
 ;; Undo and redo
-(my-key-one "C-q" 'undo)
-(my-key-one "M-q" 'undo-redo)
+(my-key-one "C-z" 'undo)
+(my-key-one "M-z" 'undo-redo)
 
 ;; Insert new line
 (my-key "insert-line-below" "C-<return>"
@@ -165,13 +171,16 @@
 	'(newline)
 	'(forward-line -1)
 	'(indent-for-tab-command))
+(my-key-one "C-h" 'my-insert-line-below)
+(my-key-one "M-h" 'my-insert-line-above)
 
-;; Search and replace
-(my-key-one "C-M-s" 'query-replace)
-(my-key-one "C-M-r" 'query-replace-regexp)
+;; Search and replaec
+(my-key-one "M-s" 'isearch-backward)
+(my-key-one "C-r" 'query-replace)
+(my-key-one "M-r" 'query-replace-regexp)
 
 ;; Recenter point
-(my-key-one "C-f" 'recenter-top-bottom)
+(my-key-one "M-f" 'recenter-top-bottom)
 
 ;; Comment-line
 (my-key-one "C-x c" 'comment-line)

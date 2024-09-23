@@ -18,7 +18,7 @@
 
 ;; Folding
 (add-hook 'prog-mode-hook #'hs-minor-mode)
-(let ((prefix "C-b "))
+(let ((prefix "C-f "))
 	(my-key "hide-all" (concat prefix char begin)
 					'(hs-hide-all))
 	(my-key "show-all" (concat prefix char end)

@@ -19,3 +19,4 @@ url
 *.elc
 /projectile-bookmarks.eld
 /recentf
+/projectile.cache
