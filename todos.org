@@ -1,11 +1,7 @@
 * now
 
-* next
 
-- kill (C-d)
-	- symbol (previous, current, next)
-	- expr (previous, current, next)
-	- line (previous, current, next)
+* next
 
 - select region (C-v)
 	- expand

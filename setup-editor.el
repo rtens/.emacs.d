@@ -133,10 +133,18 @@
 	'(left-char))
 
 ;; Kill
+(my-key "kill-region-or-line" (concat kill char down)
+				'(if (use-region-p)
+						 (kill-region nil nil t)
+					 (my-kill-line-current)))
+
+;; ... Char
 (my-key "kill-char-right" (concat kill char right)
 				'(delete-char 1))
 (my-key "kill-char-left" (concat kill char left)
 				'(delete-char -1))
+
+;; ... Word
 (my-key "kill-word-right" (concat kill word right)
 				'(my-word-end)
 				'(set-mark-command nil)
@@ -152,6 +160,31 @@
 				'(my-word-begin)
 				'(set-mark-command nil)
 				'(my-word-end)
+				'(kill-region nil nil t))
+
+;; ... Symbol
+(my-key "kill-symbol-right" (concat kill symbol right)
+				'(my-symbol-end)
+				'(set-mark-command nil)
+				'(my-symbol-right)
+				'(my-symbol-end)
+				'(kill-region nil nil t))
+(my-key "kill-symbol-left" (concat kill symbol left)
+				'(my-symbol-begin)
+				'(set-mark-command nil)
+				'(my-symbol-left)
+				'(kill-region nil nil t))
+(my-key "kill-symbol-current" (concat kill symbol down)
+				'(my-symbol-begin)
+				'(set-mark-command nil)
+				'(my-symbol-end)
+				'(kill-region nil nil t))
+
+;; ... Line
+(my-key "kill-line-current" (concat kill line down)
+				'(my-char-begin)
+				'(set-mark-command nil)
+				'(my-line-right)
 				'(kill-region nil nil t))
 
 ;; Copy
