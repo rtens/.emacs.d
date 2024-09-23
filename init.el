@@ -27,6 +27,7 @@
 (setup "tool-magit")
 (setup "tool-direx")
 (setup "tool-projectile")
+(setup "tool-yasnippet")
 
 (setup "appearance")
 
