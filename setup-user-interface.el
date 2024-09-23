@@ -8,7 +8,6 @@
 ;; Change help key
 (global-set-key (kbd "C-x h") help-map)
 
-
 ;; Don't beep, flash instead
 (setq ring-bell-function (lambda ()
 	 (invert-face 'mode-line)

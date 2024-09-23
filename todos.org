@@ -1,14 +1,8 @@
 * now
 
-
 * next
 
-- select region (C-v)
-	- expand
-- move (C-e)
-	- up/down
-	- left/right
-- duplicate (M-e)
+- repeat last direction key with C-
 
 * later
 
@@ -24,5 +18,4 @@
 - format buffer (C-c f)
 - undo tree (C-c z)
 - snippets
-- repeat last direction key with C-
 - update readme

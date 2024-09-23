@@ -187,6 +187,33 @@
 				'(my-line-right)
 				'(kill-region nil nil t))
 
+;; Move
+;; ... Line
+(my-key "move-line-up" (concat move char up)
+				'(my-kill-line-current)
+				'(my-line-left)
+				'(yank)
+				'(my-line-left))
+(my-key "move-line-down" (concat move char down)
+				'(my-kill-line-current)
+				'(my-line-right)
+				'(yank)
+				'(my-line-left))
+
+;; Duplicate
+;; ... Line
+(my-key "duplicate-line-up" (concat duplicate char up)
+				'(my-kill-line-current)
+				'(yank)
+				'(my-line-left)
+				'(yank)
+				'(my-line-left))
+(my-key "duplicate-line-down" (concat duplicate char down)
+				'(my-kill-line-current)
+				'(yank)
+				'(yank)
+				'(my-line-left))
+
 ;; Copy
 (my-key-one "C-w" 'kill-ring-save)
 
@@ -217,6 +244,11 @@
 
 ;; Comment-line
 (my-key-one "C-x c" 'comment-line)
+
+;; Expand region
+(use-package expand-region
+	:ensure t
+	:bind ("C-v" . 'er/expand-region))
 
 ;; Multi-cursor
 (use-package multiple-cursors
