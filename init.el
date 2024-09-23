@@ -25,7 +25,7 @@
 (setup "navigation")
 
 (setup "tool-magit")
-(setup "tool-direx")
+(setup "tool-neotree")
 (setup "tool-projectile")
 (setup "tool-yasnippet")
 
