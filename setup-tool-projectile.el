@@ -10,8 +10,8 @@
 	"Load .emacs-project(-user).el if existing when entering a project"
 	(message (concat "Loading project: " (projectile-project-root)))
 	(dolist (init-file (list
-											".emacs-project.el"
-											".emacs-project-user.el"))
+											".emacs/init.el"
+											".emacs/init-user.el"))
 		(let ((file (expand-file-name
 								 init-file (projectile-project-root))))
 			(if (file-exists-p file) (load-file file)))))
