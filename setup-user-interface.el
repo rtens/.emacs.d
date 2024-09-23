@@ -39,3 +39,8 @@
 (use-package auto-complete
 	:ensure t
 	:config (global-auto-complete-mode t))
+
+;; Cleaner mode line
+(use-package mood-line
+	:ensure t
+	:config (mood-line-mode))
