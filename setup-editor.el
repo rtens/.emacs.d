@@ -32,30 +32,41 @@
 ;; Units
 (defvar char "C-")
 (defvar word "M-")
-(defvar symbol "s-")
-(defvar sexp "C-M-")
-(defvar line "C-s-")
+(defvar symbol "C-n C-")
+(defvar sexp "C-M-n C-")
+(defvar line "C-M-")
 
 ;; Actions
-(defvar left "l")
-(defvar right "ä")
-(defvar up "p")
-(defvar down "ö")
-(defvar begin "o")
-(defvar end "ü")
+(defvar point "")
+(defvar select "C-v ")
+(defvar add-cursor "M-v ")
+(defvar kill "C-d ")
+(defvar append-kill "M-d ")
+(defvar copy "C-w ")
+(defvar append-copy "M-w ")
+(defvar move "C-e ")
+(defvar duplicate "M-e ")
 
-;; Move by row
-(my-key "row-up" (concat char up)
+;; Direction
+(defvar left "j")
+(defvar right "l")
+(defvar up "o")
+(defvar down "k")
+(defvar begin "u")
+(defvar end "p")
+
+;; Move by char
+(my-key "char-up" (concat char up)
 	'(previous-line))
-(my-key "row-down" (concat char down)
+(my-key "char-down" (concat char down)
 	'(next-line))
-(my-key "column-left" (concat char left)
+(my-key "char-left" (concat char left)
 	'(left-char))
-(my-key "column-right" (concat char right)
+(my-key "char-right" (concat char right)
 	'(right-char))
-(my-key "column-begin" (concat char begin)
+(my-key "char-begin" (concat char begin)
 	'(beginning-of-visual-line))
-(my-key "column-end" (concat char end)
+(my-key "char-end" (concat char end)
 	'(end-of-visual-line))
 
 ;; Move by word
@@ -118,9 +129,31 @@
 	'(forward-sexp)
 	'(left-char))
 
+;; Kill
+(my-key "kill-char-right" (concat kill char right)
+				'(delete-char 1))
+(my-key "kill-char-left" (concat kill char left)
+				'(delete-char -1))
+(my-key "kill-word-right" (concat kill word right)
+				'(my-word-end)
+				'(set-mark-command nil)
+				'(my-word-right)
+				'(my-word-end)
+				'(kill-region nil nil t))
+(my-key "kill-word-left" (concat kill word left)
+				'(my-word-begin)
+				'(set-mark-command nil)
+				'(my-word-left)
+				'(kill-region nil nil t))
+(my-key "kill-word-current" (concat kill word down)
+				'(my-word-begin)
+				'(set-mark-command nil)
+				'(my-word-end)
+				'(kill-region nil nil t))
+
 ;; Undo and redo
 (my-key-one "C-q" 'undo)
-(my-key-one "S-C-q" 'undo-redo)
+(my-key-one "M-q" 'undo-redo)
 
 ;; Insert new line
 (my-key "insert-line-below" "C-<return>"
@@ -147,13 +180,13 @@
 (use-package multiple-cursors
 	:ensure t
 	:config
-	(let ((prefix "C-j "))
-		(my-key-one (concat prefix "j")
-								'mc/edit-lines)
+	(let ((prefix add-cursor))
+		(my-key-one (concat prefix add-cursor)
+		'mc/edit-lines)
 		(my-key-one (concat prefix char right)
-								'mc/mark-next-like-this)
+		'mc/mark-next-like-this)
 		(my-key-one (concat prefix char left)
-								'mc/mark-previous-like-this)
+		'mc/mark-previous-like-this)
 		(my-key-one (concat prefix word right)
 								'mc/mark-next-like-this-word)
 		(my-key-one (concat prefix word left)

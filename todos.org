@@ -1,0 +1,37 @@
+* now
+
+- kill
+	- X word
+	- symbol (previous, current, next)
+	- expr (previous, current, next)
+	- line (previous, current, next)
+
+* next
+
+- insert line (ternux friendly key)
+- select
+	- word (previous, current, next)
+	- symbol (previous, current, next)
+	- expr (previous, current, next)
+	- line (previous, current, next)
+	- expand
+- append-kill
+- copy
+- append-copy
+- move
+- duplicate
+- repeat last direction key with C-
+
+* later
+
+- editor
+	- back/forward in mark ring
+	- show kill ring
+	- show undo tree
+	- scroll without moving point
+	- format buffer
+- buffer
+	- move buffer
+	- toggle buffers
+	- back/forward in window config
+- snippets

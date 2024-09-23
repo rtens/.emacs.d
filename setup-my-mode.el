@@ -4,17 +4,17 @@
 ;; https://github.com/kaushalmodi/.emacs.d/blob/master/elisp/modi-mode.el
 
 (defvar my-mode-map (make-sparse-keymap)
-  "Keymap for `my-mode'.")
+	"Keymap for `my-mode'.")
 
 ;;;###autoload
 (define-minor-mode my-mode
-  "A minor mode so that my key settings override annoying major modes."
-  ;; If init-value is not set to t, this mode does not get enabled in
-  ;; `fundamental-mode' buffers even after doing \"(global-my-mode 1)\".
-  ;; More info: http://emacs.stackexchange.com/q/16693/115
-  :init-value t
-  :lighter " my-mode"
-  :keymap my-mode-map)
+	"A minor mode so that my key settings override annoying major modes."
+	;; If init-value is not set to t, this mode does not get enabled in
+	;; `fundamental-mode' buffers even after doing \"(global-my-mode 1)\".
+	;; More info: http://emacs.stackexchange.com/q/16693/115
+	:init-value t
+	:lighter " my-mode"
+	:keymap my-mode-map)
 
 ;;;###autoload
 (define-globalized-minor-mode global-my-mode my-mode my-mode)
@@ -26,14 +26,15 @@
 
 ;; Turn off the minor mode in the minibuffer and magit
 (defun turn-off-my-mode ()
-  (interactive)
-  (my-mode -1))
+	(interactive)
+	(my-mode -1))
 (add-hook 'minibuffer-setup-hook #'turn-off-my-mode)
 (add-hook 'magit-mode-hook #'turn-off-my-mode)
 
 (defun my-key (name key &rest commands)
-  (defalias (intern (concat "my-" name)) (append '(lambda () (interactive)) commands)
-    (define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
+	(defalias (intern (concat "my-" name))
+		(append '(lambda () "my key" (interactive)) commands)
+		(define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
 
 (defun my-key-one (key command)
-  (define-key my-mode-map (kbd key) command))
+	(define-key my-mode-map (kbd key) command))

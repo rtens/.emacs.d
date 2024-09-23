@@ -1,33 +1,34 @@
 ;; Jump to chars
 (use-package avy
-  :ensure t
-  :config
-  (global-set-key (kbd "C-a") 'avy-goto-char-timer)
-  (setq avy-timeout-seconds 0.25))
+	:ensure t
+	:config
+	(my-key-one "C-a" 'avy-goto-char-timer)
+	(setq avy-timeout-seconds 0.25))
 
 ;; Goto line with help
-(global-set-key (kbd "C-b") 'goto-line-with-feedback)
+(my-key-one "M-a" 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
-  (interactive)
-  (unwind-protect
-      (progn
-  (display-line-numbers-mode 1)
-  (goto-line (read-number "Goto line: ")))
-    (display-line-numbers-mode -1)))
+	"Show line numbers temporarily, while prompting for the line number input"
+	(interactive)
+	(unwind-protect
+			(progn
+	(display-line-numbers-mode 1)
+	(goto-line (read-number "Goto line: ")))
+		(display-line-numbers-mode -1)))
 
 ;; Folding
 (add-hook 'prog-mode-hook #'hs-minor-mode)
-(my-key "hide-all" "C-v o"
-	'(hs-hide-all))
-(my-key "show-all" "C-v ü"
-	'(hs-show-all))
-(my-key "hide-block" "C-v p"
-	'(hs-hide-block))
-(my-key "show-block" "C-v ö"
-	'(hs-show-block))
-(my-key "hide-level" "C-v l"
-	'(hs-hide-block))
-(my-key "show-next-level" "C-v ä"
-	'(hs-show-block)
-	'(hs-hide-level 0))
+(let ((prefix "C-b "))
+	(my-key "hide-all" (concat prefix char begin)
+					'(hs-hide-all))
+	(my-key "show-all" (concat prefix char end)
+					'(hs-show-all))
+	(my-key "hide-block" (concat prefix char up)
+					'(hs-hide-block))
+	(my-key "show-block" (concat prefix char down)
+					'(hs-show-block))
+	(my-key "hide-level" (concat prefix char left)
+					'(hs-hide-block))
+	(my-key "show-next-level" (concat prefix char right)
+					'(hs-show-block)
+					'(hs-hide-level 0)))
