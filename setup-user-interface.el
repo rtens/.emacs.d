@@ -9,8 +9,8 @@
 (global-set-key (kbd "C-x h") help-map)
 
 ;; Change macro keys
-(global-set-key (kbd "C-c n") 'kmacro-start-macro-or-insert-counter)
-(global-set-key (kbd "C-c m") 'kmacro-end-or-call-macro)
+(global-set-key (kbd "C-x n") 'kmacro-start-macro-or-insert-counter)
+(global-set-key (kbd "C-x m") 'kmacro-end-or-call-macro)
 
 ;; Don't beep, flash instead
 (setq ring-bell-function (lambda ()
