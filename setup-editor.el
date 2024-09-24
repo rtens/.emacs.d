@@ -60,47 +60,50 @@
 
 ;; Move by char
 (my-key "char-up" (concat char up)
-	'(previous-line))
+				'(previous-line))
 (my-key "char-down" (concat char down)
-	'(next-line))
+				'(next-line))
 (my-key "char-left" (concat char left)
-	'(left-char))
+				'(left-char))
 (my-key "char-right" (concat char right)
-	'(right-char))
+				'(right-char))
 (my-key "char-begin" (concat char begin)
-	'(beginning-of-visual-line))
+				'(beginning-of-visual-line))
 (my-key "char-end" (concat char end)
-	'(end-of-visual-line))
+				'(end-of-visual-line))
 
 ;; Move by word
 (my-key "word-left" (concat word left)
-	'(right-char)
-	'(backward-to-word 1)
-	'(left-word))
+				'(right-char)
+				'(backward-to-word 1)
+				'(left-word))
 (my-key "word-right" (concat word right)
-	'(forward-to-word 1))
+				'(forward-to-word 1))
 (my-key "word-begin" (concat word begin)
-	'(right-char)
-	'(left-word))
+				'(right-char)
+				'(left-word))
 (my-key "word-end" (concat word end)
-	'(left-char)
-	'(right-word))
+				'(left-char)
+				'(right-word))
 (global-unset-key (kbd (concat word down)))
 (global-unset-key (kbd (concat word up)))
 
 ;; Move by line
 (my-key "line-left" (concat line left)
-	'(forward-line -1))
+				'(beginning-of-line)
+				'(left-char)
+				'(beginning-of-line))
 (my-key "line-right" (concat line right)
-	'(forward-line 1))
+				'(end-of-line)
+				'(right-char))
 (my-key "line-up" (concat line up)
-	'(scroll-down))
+				'(scroll-down))
 (my-key "line-down" (concat line down)
-	'(scroll-up))
+				'(scroll-up))
 (my-key "line-begin" (concat line begin)
-	'(beginning-of-buffer))
+				'(beginning-of-buffer))
 (my-key "line-end" (concat line end)
-	'(end-of-buffer))
+				'(end-of-buffer))
 
 ;; Move by symbol
 (my-key-dir '(symbol left)
@@ -138,7 +141,8 @@
 (my-key-dir '(kill char down)
 						'(if (use-region-p)
 								 (kill-region nil nil t)
-							 (my-kill-line-current)))
+							 (my-kill-line-down)))
+(my-key-one "C-d C-d" 'my-kill-char-down)
 
 ;; ... Char
 (my-key-dir '(kill char right)
@@ -184,10 +188,7 @@
 
 ;; ... Line
 (my-key-dir '(kill line down)
-						'(my-char-begin)
-						'(set-mark-command nil)
-						'(my-line-right)
-						'(kill-region nil nil t))
+						'(kill-whole-line))
 
 ;; Move
 ;; ... Line
