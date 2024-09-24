@@ -15,5 +15,5 @@
 - kill tree (C-c y)
 - format buffer (C-c f)
 - undo tree (C-c z)
-- snippets
 - update readme
+- make editor commands work on edges
