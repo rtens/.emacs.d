@@ -2,9 +2,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-;; Minimal frame title
-(setq frame-title-format '("emacs"))
-
 ;; Dive right in
 (setq inhibit-splash-screen t)
 

@@ -1,3 +1,6 @@
+;; Minimal frame title
+(setq frame-title-format '("emacs"))
+
 ;; Change exit key
 (global-set-key (kbd "C-x q") 'save-buffers-kill-terminal)
 (global-unset-key (kbd "C-x C-c"))
