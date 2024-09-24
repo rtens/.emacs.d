@@ -254,11 +254,13 @@
 ;; Expand region
 (use-package expand-region
 	:ensure t
+	:defer 3
 	:bind ("C-v" . 'er/expand-region))
 
 ;; Multi-cursor
 (use-package multiple-cursors
 	:ensure t
+	:defer 3
 	:config
 	(let ((prefix add-cursor))
 		(my-key-one (concat prefix add-cursor)

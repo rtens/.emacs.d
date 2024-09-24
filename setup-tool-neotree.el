@@ -1,6 +1,7 @@
 ;; Install and configure
 (use-package neotree
 	:ensure t
+	:defer 3
 	:config
 	(setq neo-theme 'ascii)
 	(setq neo-window-width 25)

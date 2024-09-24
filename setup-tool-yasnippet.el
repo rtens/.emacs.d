@@ -1,6 +1,7 @@
 ;; Install the package
 (use-package yasnippet
 	:ensure t
+	:defer 3
 	:config (yas-global-mode 1))
 
 ;; Load project snippets

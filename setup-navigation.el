@@ -1,6 +1,7 @@
 ;; Jump to chars
 (use-package avy
 	:ensure t
+	:defer 3
 	:config
 	(my-key-one "M-a" 'avy-goto-char-timer)
 	(setq avy-timeout-seconds 0.25))

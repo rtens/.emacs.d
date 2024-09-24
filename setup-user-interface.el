@@ -20,6 +20,7 @@
 ;; Better tab-completion
 (use-package flx-ido
 	:ensure t
+	:defer 2
 	:config
 	(ido-mode 1)
 	(fido-mode t)
@@ -42,9 +43,11 @@
 ;; Auto-complete
 (use-package auto-complete
 	:ensure t
+	:defer 2
 	:config (global-auto-complete-mode t))
 
 ;; Cleaner mode line
 (use-package mood-line
 	:ensure t
+	:defer 1
 	:config (mood-line-mode))

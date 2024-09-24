@@ -1,9 +1,19 @@
 ;; Install and configure projectile
 (use-package projectile
 	:ensure t
-	:init (projectile-mode +1)
+	:defer 2
 	:bind (:map projectile-mode-map
-							("C-c p" . projectile-command-map)))
+							("C-c p" . projectile-command-map))
+	:config
+	(projectile-mode +1)
+
+	;; Add project name to frame title
+	(setq frame-title-format '("emacs [" (:eval (projectile-project-name)) "]"))
+
+	;; Add project name to mode line
+	(defun mood-line-segment-buffer-name ()
+		"Displays the name of the project and current buffer in the mode-line."
+		(format "[%s] %s" (projectile-project-name) (buffer-name))))
 
 ;; Function to load proiect init files
 (defun my-load-project-inits ()
@@ -23,11 +33,3 @@
 
 ;; Load project init files every time the project is switched to
 (add-hook 'projectile-after-switch-project-hook #'my-load-project-inits)
-
-;; Add project name to frame title
-(setq frame-title-format '("emacs [" (:eval (projectile-project-name)) "]"))
-
-;; Add project name to mode line
-(defun mood-line-segment-buffer-name ()
-	"Displays the name of the project and current buffer in the mode-line."
-	(format "[%s] %s" (projectile-project-name) (buffer-name)))
