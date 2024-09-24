@@ -2,11 +2,11 @@
 (use-package avy
 	:ensure t
 	:config
-	(my-key-one "C-a" 'avy-goto-char-timer)
+	(my-key-one "M-a" 'avy-goto-char-timer)
 	(setq avy-timeout-seconds 0.25))
 
 ;; Goto line with help
-(my-key-one "M-a" 'goto-line-with-feedback)
+(my-key-one "M-g" 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
 	"Show line numbers temporarily, while prompting for the line number input"
 	(interactive)

@@ -2,9 +2,6 @@
 (global-set-key (kbd "C-x q") 'save-buffers-kill-terminal)
 (global-unset-key (kbd "C-x C-c"))
 
-;; Change quit key
-(global-set-key (kbd "C-q") 'keyboard-quit)
-
 ;; Change help key
 (global-set-key (kbd "C-x h") help-map)
 

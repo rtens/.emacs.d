@@ -28,7 +28,7 @@
 (pending-delete-mode t)
 
 ;; Set mark
-(my-key-one "M-q" 'set-mark-command)
+(my-key-one "C-a" 'set-mark-command)
 
 ;; Keybindings for movements
 
