@@ -36,5 +36,24 @@
 		(append '(lambda () "my key" (interactive)) commands)
 		(define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
 
+(defun my-key-dir (keys &rest commands)
+	(let ((name-prefix (string-join (butlast (mapcar 'symbol-name keys)) "-")))
+		(apply 'my-key
+					 (append (list
+										(string-join (mapcar 'symbol-name keys) "-")
+										(eval (append '(concat) keys)))
+									 commands
+									 (list (list 'setq 'my-key-name-prefix name-prefix))
+									 '((set-transient-map
+											(let ((xkmap (make-sparse-keymap)))
+												(dolist (dir '(up down right left begin end))
+													(define-key xkmap
+																			(kbd (concat char (eval dir)))
+																			(intern (concat "my-"
+																											my-key-name-prefix
+																											"-"
+																											(symbol-name dir)))))
+												xkmap)))))))
+
 (defun my-key-one (key command)
 	(define-key my-mode-map (kbd key) command))

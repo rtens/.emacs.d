@@ -2,8 +2,6 @@
 
 * next
 
-- repeat last direction key with C-
-
 * later
 
 - append copy (M-w)
