@@ -2,19 +2,25 @@
 
 * next
 
+- no C-M-
+- setup folder
+
 * later
 
-- append copy (M-w)
-- last/next window config (C/M-e)
-- append kill (M-d)
-- last/next mark (C/M-g)
-- switch buffer list (M-b)
-- toggle buffer (C-b)
-- move buffer (C-x e)
-- chose window (C-c o)
-- kill tree (C-c y)
-- format buffer (C-c f)
-- undo tree (C-c z)
+- editor
+	- append copy (M-w)
+	- last/next window config (C/M-e)
+	- append kill (M-d)
+	- last/next mark (C/M-g)
+- windows
+	- switch buffer list (M-b)
+	- toggle buffer (C-b)
+	- move buffer (C-x e)
+	- chose window (C-c o)
+- tools
+	- kill tree (C-c y)
+	- format buffer (C-c f)
+	- undo tree (C-c z)
 - update readme
 - fix: end of buffer
 - lsp and/or eglot
