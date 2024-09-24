@@ -24,6 +24,9 @@
 ;; Load project init files every time the project is switched to
 (add-hook 'projectile-after-switch-project-hook #'my-load-project-inits)
 
+;; Add project name to frame title
+(setq frame-title-format '("emacs [" (:eval (projectile-project-name)) "]"))
+
 ;; Add project name to mode line
 (defun mood-line-segment-buffer-name ()
 	"Displays the name of the project and current buffer in the mode-line."
