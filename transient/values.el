@@ -1,1 +1,2 @@
-((magit-pull "--rebase"))
+((magit-pull "--rebase")
+ (magit-fetch "--prune"))
