@@ -16,5 +16,10 @@
 - format buffer (C-c f)
 - undo tree (C-c z)
 - update readme
-- make editor commands work on edges
+- fix: end of buffer
 - lsp and/or eglot
+- python
+	- flycheck
+	- lsp mode
+	- pre commit hooks
+	- run test at point
