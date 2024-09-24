@@ -17,3 +17,4 @@
 - undo tree (C-c z)
 - update readme
 - make editor commands work on edges
+- lsp and/or eglot
