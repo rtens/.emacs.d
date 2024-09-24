@@ -28,7 +28,7 @@
 
 ;; Load project init files after a short delay to make sure project root is available
 (defun my-delayed-project-inits ()
-	(run-with-timer 1 nil 'my-load-project-inits))
+	(run-with-timer 5 nil 'my-load-project-inits))
 (add-hook 'desktop-after-read-hook 'my-delayed-project-inits)
 
 ;; Load project init files every time the project is switched to

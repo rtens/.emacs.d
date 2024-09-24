@@ -13,5 +13,5 @@
 			(message "Project snippets loaded"))))
 (add-hook 'projectile-after-switch-project-hook #'my-load-project-snippets)
 (defun my-delayed-load-project-snippets ()
-	(run-with-timer 1 nil 'my-load-project-snippets))
+	(run-with-timer 5 nil 'my-load-project-snippets))
 (add-hook 'desktop-after-read-hook 'my-delayed-load-project-snippets)
