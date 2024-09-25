@@ -287,26 +287,24 @@
 	:defer 3
 	:bind ("C-v" . 'er/expand-region))
 
-;; ;; Multi-cursor
-;; (use-package multiple-cursors
-;;	:ensure t
-;;	:defer 3
-;;	:config
-;;	(let ((prefix add-cursor))
-;;		(my-key-one (concat prefix add-cursor)
-;;		'mc/edit-lines)
-;;		(my-key-one (concat prefix char right)
-;;		'mc/mark-next-like-this)
-;;		(my-key-one (concat prefix char left)
-;;		'mc/mark-previous-like-this)
-;;		(my-key-one (concat prefix word right)
-;;								'mc/mark-next-like-this-word)
-;;		(my-key-one (concat prefix word left)
-;;								'mc/mark-previous-like-this-word)
-;;		(my-key-one (concat prefix symbol right)
-;;								'mc/mark-next-like-this-symbol)
-;;		(my-key-one (concat prefix symbol left)
-;;								'mc/mark-previous-like-this-symbol)
-;;		(my-key-one (concat prefix symbol end)
-;;								'mc/mark-all-symbols-like-this)
-;;		))
+;; Multi-cursor
+(use-package multiple-cursors
+	:ensure t
+	:defer 3
+	:config
+	(my-key-one (concat add-cursor add-cursor)
+							'mc/edit-lines)
+	(my-key-dir '(add-cursor char right)
+							'(mc/mark-next-like-this))
+	(my-key-dir '(add-cursor char left)
+							'(mc/mark-previous-like-this))
+	(my-key-dir '(add-cursor word right)
+							'(mc/mark-next-like-this-word))
+	(my-key-dir '(add-cursor word left)
+							'(mc/mark-previous-like-this-word))
+	(my-key-dir '(add-cursor symbol right)
+							'(mc/mark-next-like-this-symbol))
+	(my-key-dir '(add-cursor symbol left)
+							'(mc/mark-previous-like-this-symbol))
+	(my-key-dir '(add-cursor symbol end)
+							'(mc/mark-all-symbols-like-this)))
