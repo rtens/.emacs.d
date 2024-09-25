@@ -1,0 +1,105 @@
+* .emacs.d
+
+This is my attempt of keeping a consistent editor configuration across systems.
+
+
+** Sources
+
+Here are a couple of good sources
+
+- [emacsrocks (magnars)](https://github.com/magnars/.emacs.d/)
+- [emacs4developers](https://github.com/pierre-lecocq/emacs.d)
+- [Parens of the Dead](https://www.parens-of-the-dead.com/)
+- [redguardtoo](https://github.com/redguardtoo/Emacs.d)
+
+** Init cascade
+
+Init files (if existing) are loaded in this order:
+
+- `~/.emacs.d/custom-user.el`
+- `~/.emacs.d/setup/*.el`
+- `~/.emacs.d/custom-user.el`
+- `~/.emacs.d/init-user.el`
+- `<project root>/.emacs/init.el`
+- `<project root>/.emacs/init-user.el`
+
+
+** Keymap
+
+*** Basic
+
+| Key | C-               | M-               |
+|-----+------------------+------------------|
+| 1-9 | Digit Argument   |                  |
+| 0   | Universal Arg    |                  |
+| Q   | Last Mark TODO   | Next Mark TODO   |
+| W   | Copy             | Append Copy TODO |
+| E   | Move             | Duplicate        |
+| R   | Replace          | Replace regex    |
+| T   | Last View TODO   | Next View TODO   |
+| Y   | Yank Last        | Yank Next        |
+| U   | Begin            | Scroll Up        |
+| I   | <TAB>            | Line...          |
+| O   | Up               | Up 10            |
+| P   | End              | Scroll Down      |
+| A   | Set Mark         | Search backwards |
+| S   | avy Jump         | Search forward   |
+| D   | Kill             | Append Kill TODO |
+| F   | Fold...          | Focus Point      |
+| G   | Quit             | Goto Line        |
+| H   | Newline below    | Newline above    |
+| J   | Left             | Left 10          |
+| K   | Down             | Down 10          |
+| L   | Right            | Right 10         |
+| Z   | Undo             | Redo             |
+| X   | C-x...           | M-x              |
+| C   | C-c...           |                  |
+| V   | Select Region    | Add Cursor...    |
+| B   | Last Buffer TODO | Next Buffer TODO |
+| N   | Word...          | Symbol...        |
+| M   | <RET>            | S-Expression...  |
+
+*** Extended
+
+| Key | C-x                 | C-c                |
+|-----+---------------------+--------------------|
+| 1   | Close others        |                    |
+| 2   | Split down          |                    |
+| 3   | Split right         |                    |
+| 4   | Other...            |                    |
+| 5   |                     |                    |
+| 6   |                     |                    |
+| 7   |                     |                    |
+| 8   |                     |                    |
+| 9   |                     |                    |
+| 0   | Close current       |                    |
+| Q   | Exit                |                    |
+| W   |                     |                    |
+| E   | Move Buffer TODO    |                    |
+| R   |                     |                    |
+| T   |                     |                    |
+| Y   | Kill Tree TODO      |                    |
+| U   |                     |                    |
+| I   |                     |                    |
+| O   | Next window         | Chose window TODO  |
+| P   | Project...          | Projectile...      |
+| A   |                     |                    |
+| S   | Save current TODO   | Save some TODO     |
+| D   | Dired               | Direx              |
+| F   | Visit File          | Format Buffer TODO |
+| G   | Magit               |                    |
+| H   | Help...             |                    |
+| J   |                     | imenu              |
+| K   | Kill Buffer         |                    |
+| L   |                     |                    |
+| Z   | Repeat Command      | Undo Tree TODO     |
+| X   | Exchange mark&point |                    |
+| C   |                     |                    |
+| V   |                     |                    |
+| B   | Switch Buffer       | List Buffers TODO  |
+| N   | Record Macro        |                    |
+| M   | End/Play Macro      |                    |
+
+** Snippets
+
+[TBD]

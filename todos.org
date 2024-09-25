@@ -29,3 +29,5 @@
 	- lsp mode
 	- pre commit hooks
 	- run test at point
+- move lines right/left
+- jump to error line (maybe hyperbole)
