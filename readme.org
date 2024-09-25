@@ -75,7 +75,7 @@ Init files (if existing) are loaded in this order:
 | 0   | Close current       |                    |
 | Q   | Exit                |                    |
 | W   |                     |                    |
-| E   | Move Buffer TODO    |                    |
+| E   | Move Buffer TODO    | Switch Buffer TODO |
 | R   |                     |                    |
 | T   |                     |                    |
 | Y   | Kill Tree TODO      |                    |
@@ -96,7 +96,7 @@ Init files (if existing) are loaded in this order:
 | X   | Exchange mark&point |                    |
 | C   |                     |                    |
 | V   |                     |                    |
-| B   | Switch Buffer       | List Buffers TODO  |
+| B   | Change Buffer       | List Buffers TODO  |
 | N   | Record Macro        |                    |
 | M   | End/Play Macro      |                    |
 
