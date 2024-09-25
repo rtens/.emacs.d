@@ -51,3 +51,9 @@
 	:ensure t
 	:defer 1
 	:config (mood-line-mode))
+
+;; Help with key bindings
+(use-package which-key
+	:ensure t
+	:defer 3
+	:config (which-key-mode))
