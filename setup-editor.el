@@ -271,7 +271,8 @@
 (my-key-one "M-h" 'my-insert-line-above)
 
 ;; Search and replaec
-(my-key-one "M-s" 'isearch-backward)
+(my-key-one "M-s" 'isearch-forward)
+(my-key-one "M-a" 'isearch-backward)
 (my-key-one "C-r" 'query-replace)
 (my-key-one "M-r" 'query-replace-regexp)
 

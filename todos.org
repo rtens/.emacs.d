@@ -1,10 +1,8 @@
 * now
 
-- no C-M-
-
 * next
 
-- setup folder
+- "setup" folder
 
 * later
 
