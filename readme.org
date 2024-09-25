@@ -3,14 +3,14 @@
 This is my attempt of keeping a consistent editor configuration across systems.
 
 
-** Sources
+** Resources
 
 Here are a couple of good sources
 
-- [emacsrocks (magnars)](https://github.com/magnars/.emacs.d/)
-- [emacs4developers](https://github.com/pierre-lecocq/emacs.d)
-- [Parens of the Dead](https://www.parens-of-the-dead.com/)
-- [redguardtoo](https://github.com/redguardtoo/Emacs.d)
+- [[https://github.com/magnars/.emacs.d/][emacsrocks (magnars)]]
+- [[https://github.com/pierre-lecocq/emacs.d][emacs4developers]]
+- [[https://www.parens-of-the-dead.com/][Parens of the Dead]]
+- [[https://github.com/redguardtoo/Emacs.d][redguardtoo]]
 
 ** Init cascade
 
@@ -103,3 +103,36 @@ Init files (if existing) are loaded in this order:
 ** Snippets
 
 [TBD]
+
+** TODOs
+
+*** now
+
+*** next
+
+*** later
+
+- editor
+	- append copy (M-w)
+	- last/next window config (C/M-e)
+	- append kill (M-d)
+	- last/next mark (C/M-g)
+- windows
+	- switch buffer list (M-b)
+	- toggle buffer (C-b)
+	- move buffer (C-x e)
+	- chose window (C-c o)
+- tools
+	- kill tree (C-c y)
+	- format buffer (C-c f)
+	- undo tree (C-c z)
+- update readme
+- fix: end of buffer
+- lsp and/or eglot
+- python
+	- flycheck
+	- lsp mode
+	- pre commit hooks
+	- run test at point
+- move lines right/left
+- jump to error line (maybe hyperbole)
