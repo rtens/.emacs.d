@@ -2,8 +2,6 @@
 
 * next
 
-- "setup" folder
-
 * later
 
 - editor

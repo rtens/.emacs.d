@@ -6,7 +6,7 @@
 (defun setup (file)
 	"Import a file from the emacs directory."
 	(load-file (expand-file-name
-				(concat "setup-" file ".el")
+				(concat "setup/" file ".el")
 				user-emacs-directory)))
 
 ;; Turn off the lights
