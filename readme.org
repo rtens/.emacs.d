@@ -97,8 +97,8 @@ Init files (if existing) are loaded in this order:
 | C   |                     |                    |
 | V   |                     |                    |
 | B   | Change Buffer       | List Buffers TODO  |
-| N   | Record Macro        |                    |
-| M   | End/Play Macro      |                    |
+| N   |                     |                    |
+| M   | Record Macro        | End/Play Macro     |
 
 ** Snippets
 
