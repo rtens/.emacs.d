@@ -84,7 +84,7 @@ Init files (if existing) are loaded in this order:
 | O   | Next window         | Chose window TODO  |
 | P   | Project...          | Projectile...      |
 | A   |                     |                    |
-| S   | Save current TODO   | Save some TODO     |
+| S   | Save current buffer | Save some buffers  |
 | D   | Dired               | Direx              |
 | F   | Visit File          | Format Buffer TODO |
 | G   | Magit               |                    |
@@ -96,7 +96,7 @@ Init files (if existing) are loaded in this order:
 | X   | Exchange mark&point |                    |
 | C   |                     |                    |
 | V   |                     |                    |
-| B   | Change Buffer       | List Buffers TODO  |
+| B   | Change Buffer       | ibuffer            |
 | N   |                     |                    |
 | M   | Record Macro        | End/Play Macro     |
 
@@ -113,14 +113,13 @@ Init files (if existing) are loaded in this order:
 *** later
 
 - editor
-	- append copy (M-w)
+	- append copy/kill (M-w/d)
 	- last/next window config (C/M-e)
-	- append kill (M-d)
 	- last/next mark (C/M-g)
 - windows
-	- switch buffer list (M-b)
-	- toggle buffer (C-b)
+	- last/next buffer (C/M-b)
 	- move buffer (C-x e)
+	- switch buffer (C-c e)
 	- chose window (C-c o)
 - tools
 	- kill tree (C-c y)

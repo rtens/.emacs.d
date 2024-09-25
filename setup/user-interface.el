@@ -12,6 +12,13 @@
 (global-set-key (kbd "C-x m") 'kmacro-start-macro-or-insert-counter)
 (global-set-key (kbd "C-c m") 'kmacro-end-or-call-macro)
 
+;; Key binding for ibuffer
+(global-set-key (kbd "C-c b") 'ibuffer)
+
+;; Key binding for saving files
+(global-set-key (kbd "C-x s") 'save-buffer)
+(global-set-key (kbd "C-c s") 'save-some-buffers)
+
 ;; Don't beep, flash instead
 (setq ring-bell-function (lambda ()
 	 (invert-face 'mode-line)
