@@ -37,10 +37,10 @@
 (if (eq system-type 'windows-nt)
 		(setup "system-windows"))
 
-;; Load custom file again to overwrite other settings
-(if (file-exists-p custom-file) (load custom-file))
-
 ;; Load user init files if existing
 (let ((init-user (expand-file-name "init-user.el" user-emacs-directory)))
 	(if (file-exists-p init-user)
 			(load-file init-user)))
+
+;; Load custom file again to overwrite other settings
+(if (file-exists-p custom-file) (load custom-file))

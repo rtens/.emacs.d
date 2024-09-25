@@ -16,12 +16,14 @@ Here are a couple of good sources
 
 Init files (if existing) are loaded in this order:
 
-- `~/.emacs.d/custom-user.el`
-- `~/.emacs.d/setup/*.el`
-- `~/.emacs.d/custom-user.el`
-- `~/.emacs.d/init-user.el`
-- `<project root>/.emacs/init.el`
-- `<project root>/.emacs/init-user.el`
+- `~/.emacs.d/custom-user.el` - loaded first to load saved settings
+- `~/.emacs.d/setup/*.el` - all modules
+- `~/.emacs.d/init-user.el` - local config not under version control
+- `~/.emacs.d/custom-user.el` - again to overwrite other configs
+- `<project root>/.emacs/init.el` - version-controlled project config
+- `<project root>/.emacs/init-user.el` - local project config
+
+The project configs are loaded on startup and every time the project is switched into.
 
 
 ** Keymap
