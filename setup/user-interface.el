@@ -21,6 +21,7 @@
 (use-package flx-ido
 	:ensure t
 	:defer 2
+	:bind (("M-j" . icomplete-fido-exit))
 	:config
 	(ido-mode 1)
 	(fido-mode t)
