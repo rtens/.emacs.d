@@ -31,11 +31,18 @@
 (add-hook 'minibuffer-setup-hook #'turn-off-my-mode)
 (add-hook 'magit-mode-hook #'turn-off-my-mode)
 
+;; Shorthand for defining key binding with single command
+(defun my-key-one (key command)
+	(define-key my-mode-map (kbd key) command))
+
+;; Shorthand for defining key binding with multiple commands
 (defun my-key (name key &rest commands)
 	(defalias (intern (concat "my-" name))
 		(append '(lambda () (interactive)) commands)
-		(define-key my-mode-map (kbd key) (intern (concat "my-" name)))))
+		name)
+	(define-key my-mode-map (kbd key) (intern (concat "my-" name))))
 
+;; Define a repeatable key binding (escape with C-i)
 (defun my-key-dir (keys &rest commands)
 	(let ((name-prefix (string-join (butlast (mapcar 'symbol-name keys)) "-")))
 		(apply 'my-key
@@ -53,6 +60,3 @@
 											(define-key xkmap (kbd (eval dir)) fn))))
 								xkmap))
 						))))
-
-(defun my-key-one (key command)
-	(define-key my-mode-map (kbd key) command))

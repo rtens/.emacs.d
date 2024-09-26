@@ -4,7 +4,6 @@
 /auto-save*
 /backups
 /elpa
-.mc-lists.el
 ac-comphist.dat
 /transient/history.el
 /projects
