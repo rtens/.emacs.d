@@ -29,6 +29,8 @@
 (setup "tool-projectile")
 (setup "tool-yasnippet")
 
+(setup "lang-js")
+
 (setup "appearance")
 
 ;; Load system-specific init files
