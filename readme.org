@@ -137,3 +137,33 @@ The project configs are loaded on startup and every time the project is switched
 	- run test at point
 - move lines right/left
 - jump to error line (maybe hyperbole)
+
+- packages from awesome-emacs
+	- editor
+		- [[https://github.com/wyuenho/move-dup][move-dup]] - use instead of own functions
+		- [[https://github.com/doitian/iy-go-to-char][iy-go-to-char]]
+		- [[https://github.com/tanrax/scroll-page-without-moving-point.el][scroll-page-without-moving-point.el]]
+		- [[https://github.com/lassik/emacs-format-all-the-code][emacs-format-all-the-code]]
+		- [[https://www.emacswiki.org/emacs/download/hideshowvis.el][hideshowvis.el]]
+		- [[https://github.com/rolandwalker/back-butto][back-button]]
+	- git
+		- [[https://github.com/camdez/goto-last-change.el][goto-last-change]]
+		- [[https://github.com/alphapapa/magit-todos][magit-todos]]
+		- [[https://github.com/dgutov/diff-hl][diff-hl]]
+		- [[https://gitlab.com/pidu/git-timemachine][git-timemachine]]
+		- [[https://github.com/magit/forge][forge]]
+	- undo tree
+		- [[https://github.com/casouri/vundo][vundo]]
+		- [[https://www.emacswiki.org/emacs/UndoTree][UndoTree]]
+		- [[https://codeberg.org/ideasman42/emacs-undo-fu][emacs-undo-fu]]
+		- [[https://github.com/jackkamm/undo-propose-el][undo-propose-el]]
+	- kill ring
+		- [[https://www.emacswiki.org/emacs/popup-kill-ring.el][popup-kill-ring.el]]
+		- [[https://github.com/browse-kill-ring/browse-kill-ring][browse-kill-ring]]
+	- windows
+		- [[https://github.com/abo-abo/ace-window][ace-window]]
+		- [[https://github.com/lukhas/buffer-move][buffer-move]]
+		- [[https://github.com/dimitri/switch-window][switch-window]]
+	- gogole
+		- [[https://github.com/Malabarba/emacs-google-this][emacs-google-this]]
+		- [[https://github.com/atykhonov/google-translate][google-translate]]
