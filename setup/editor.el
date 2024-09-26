@@ -271,8 +271,8 @@
 (my-key-one "M-h" 'my-insert-line-above)
 
 ;; Search and replaec
-(my-key-one "M-s" 'isearch-forward)
-(my-key-one "M-a" 'isearch-backward)
+(my-key-one "M-s" 'isearch-forward-thing-at-point)
+(my-key-one "M-a" 'isearch-backward-thing-at-point)
 (my-key-one "C-r" 'query-replace)
 (my-key-one "M-r" 'query-replace-regexp)
 
@@ -281,6 +281,12 @@
 
 ;; Comment-line
 (my-key-one "C-x c" 'comment-line)
+
+;; Highlight symbols
+(use-package highlight-symbol
+	:ensure t
+	:defer 4
+	:config (highlight-symbol-mode t))
 
 ;; Expand region
 (use-package expand-region
@@ -308,4 +314,6 @@
 	(my-key-dir '(add-cursor symbol left)
 							'(mc/mark-previous-like-this-symbol 1))
 	(my-key-dir '(add-cursor symbol end)
-							'(mc/mark-all-symbols-like-this)))
+							'(mc/mark-all-symbols-like-this))
+	(global-unset-key (kbd "M-<down-mouse-1>"))
+	(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click))

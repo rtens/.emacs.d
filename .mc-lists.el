@@ -2,7 +2,7 @@
 ;; It keeps track of your preferences for running commands with multiple cursors.
 
 (setq mc/cmds-to-run-for-all
-      '(
+			'(
 				electric-pair-delete-pair
 				my-char-begin
 				my-char-down
@@ -28,7 +28,8 @@
 				))
 
 (setq mc/cmds-to-run-once
-      '(
+			'(
+				my-add-cursor-char-left
 				my-add-cursor-char-right
 				my-add-cursor-symbol-end
 				my-add-cursor-symbol-left
