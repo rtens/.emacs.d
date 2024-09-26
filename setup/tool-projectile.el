@@ -34,18 +34,11 @@
 ;; Load project init files every time the project is switched to
 (add-hook 'projectile-after-switch-project-hook #'my-load-project-inits)
 
-;; Open readme and magit on project switch
+;; Open dired and magit on project switch
 (defun my-projectile-switch-project-action ()
 	(interactive)
-	(ignore-errors
-		(let ((files '("README" "README.md" "readme.md" "readme.org" "README.org")))
-			(while files
-				(message "Looking for: %s" (first files))
-				(if (file-exists-p (first files))
-						(progn
-							(find-file (first files))
-							(setq files nil))
-					(setq files (rest files))))))
+	"Open dired, fetch all and open magit status"
+	(dired-jump)
 	(when (vc-git-responsible-p default-directory)
 		(magit-fetch-all-prune)
 		(magit-status)))
