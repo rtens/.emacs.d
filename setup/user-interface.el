@@ -65,3 +65,9 @@
 	:ensure t
 	:defer 3
 	:config (which-key-mode))
+
+;; Makes sure windows are balanced and enlarged if needed
+(use-package zoom
+	:ensure t
+	:defer 3
+	:config (zoom-mode t))
