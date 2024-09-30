@@ -11,6 +11,7 @@
 
 ;; Turn off the lights
 (set-background-color "black")
+(set-foreground-color "grey")
 
 ;; Set and load customization file
 (setq custom-file (expand-file-name "custom-user.el" user-emacs-directory))
