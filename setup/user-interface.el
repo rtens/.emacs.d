@@ -2,6 +2,7 @@
 (setq frame-title-format '("emacs"))
 
 ;; Change exit key
+(setq confirm-kill-emacs #'y-or-n-p)
 (global-set-key (kbd "C-x q") 'save-buffers-kill-terminal)
 (global-unset-key (kbd "C-x C-c"))
 
