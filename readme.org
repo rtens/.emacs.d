@@ -44,7 +44,7 @@ The project configs are loaded on startup and every time the project is switched
 | I   | <TAB>            | Line...          |
 | O   | Up               | Up 10            |
 | P   | End              | Scroll Down      |
-| A   | Set Mark         |                  |
+| A   | Set Mark         | Jump to char     |
 | S   | avy Jump         | Search forward   |
 | D   | Kill             | Append Kill TODO |
 | F   | Fold...          | Focus Point      |

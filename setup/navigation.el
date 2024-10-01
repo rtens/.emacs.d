@@ -6,6 +6,28 @@
 	(my-key-one "C-s" 'avy-goto-char-timer)
 	(setq avy-timeout-seconds 0.25))
 
+;; Jump to next char
+(unless (package-installed-p 'iy-go-to-char)
+	(package-vc-install "https://github.com/doitian/iy-go-to-char"))
+(defun my-go-to-char (n char)
+	"Goes up to char and then continues with directions"
+	(interactive "p\ncGo up to char: ")
+	(iy-go-up-to-char n char)
+	(my-go-to-char-continue))
+(defun my-go-to-char-continue ()
+	(set-transient-map
+	 (let ((xkmap (make-sparse-keymap)))
+		 (define-key xkmap (kbd right) (lambda ()
+																		 (interactive)
+																		 (iy-go-up-to-char-continue 1)
+																		 (my-go-to-char-continue)))
+		 (define-key xkmap (kbd left) (lambda ()
+																		(interactive)
+																		(iy-go-to-char-continue-backward 1)
+																		(my-go-to-char-continue)))
+		 xkmap)))
+(global-set-key (kbd "M-a") 'my-go-to-char)
+
 ;; Goto line with help
 (my-key-one "M-g" 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
