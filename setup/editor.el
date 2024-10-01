@@ -223,32 +223,20 @@
 (my-key-dir '(kill line down)
 						'(kill-whole-line))
 
-;; Move
+;; Move and dupkicate lines
 ;; ... Line
-(my-key-dir '(move char up)
-						'(my-kill-line-down)
-						'(my-line-left)
-						'(yank)
-						'(my-line-left))
-(my-key-dir '(move char down)
-						'(my-kill-line-down)
-						'(my-line-right)
-						'(yank)
-						'(my-line-left))
-
-;; Duplicate
-;; ... Line
-(my-key-dir '(duplicate char up)
-						'(my-kill-line-down)
-						'(yank)
-						'(my-line-left)
-						'(yank)
-						'(my-line-left))
-(my-key-dir '(duplicate char down)
-						'(my-kill-line-down)
-						'(yank)
-						'(yank)
-						'(my-line-left))
+(use-package move-dup
+	:ensure t
+	:defer 2
+	:config
+	(my-key-dir '(move char up)
+							'(move-dup-move-lines-up))
+	(my-key-dir '(move char down)
+							'(move-dup-move-lines-down))
+	(my-key-dir '(duplicate char up)
+							'(move-dup-duplicate-up 1))
+	(my-key-dir '(duplicate char down)
+							'(move-dup-duplicate-down 1)))
 
 ;; Copy
 (my-key-one "C-w" 'kill-ring-save)

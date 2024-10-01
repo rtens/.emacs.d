@@ -117,7 +117,6 @@ The project configs are loaded on startup and every time the project is switched
 - editor
 	- append copy/kill (M-w/d)
 	- last/next window config (C/M-e)
-	- last/next mark (C/M-g)
 - windows
 	- last/next buffer (C/M-b)
 	- move buffer (C-x e)
@@ -140,7 +139,6 @@ The project configs are loaded on startup and every time the project is switched
 
 - packages from awesome-emacs
 	- editor
-		- [[https://github.com/wyuenho/move-dup][move-dup]] - use instead of own functions
 		- [[https://github.com/doitian/iy-go-to-char][iy-go-to-char]]
 		- [[https://github.com/tanrax/scroll-page-without-moving-point.el][scroll-page-without-moving-point.el]]
 		- [[https://github.com/lassik/emacs-format-all-the-code][emacs-format-all-the-code]]
