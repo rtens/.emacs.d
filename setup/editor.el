@@ -75,7 +75,7 @@
 (my-key-dir '(char right)
 						'(right-char))
 (my-key-dir '(char begin)
-						'(beginning-of-visual-line))
+						'(back-to-indentation))
 (my-key-dir '(char end)
 						'(end-of-visual-line))
 
@@ -93,9 +93,9 @@
 								 (end-of-visual-line)
 							 (right-char 10)))
 (my-key-dir '(char begin-many)
-						'(scroll-down))
+						'(beginning-of-line))
 (my-key-dir '(char end-many)
-						'(scroll-up))
+						'(end-of-line))
 
 ;; Move by word
 (my-key-dir '(word left)
