@@ -272,7 +272,6 @@
 
 ;; Search and replaec
 (my-key-one "M-s" 'isearch-forward-thing-at-point)
-(my-key-one "M-a" 'isearch-backward-thing-at-point)
 (my-key-one "C-r" 'query-replace)
 (my-key-one "M-r" 'query-replace-regexp)
 
