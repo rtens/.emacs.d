@@ -53,7 +53,7 @@
 						(list 'setq 'my-key-name-prefix name-prefix)
 						'(set-transient-map
 							(let ((xkmap (make-sparse-keymap)))
-								(define-key xkmap (kbd "C-i") ())
+								(define-key xkmap (kbd "C-i") 'keyboard-quit)
 								(dolist (dir '(up down right left begin end))
 									(let ((fn (intern (concat "my-" my-key-name-prefix "-" (symbol-name dir)))))
 										(when (fboundp fn)
