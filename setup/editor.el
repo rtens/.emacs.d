@@ -316,3 +316,15 @@
 							'(mc/mark-all-symbols-like-this))
 	(global-unset-key (kbd "M-<down-mouse-1>"))
 	(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click))
+
+;; Go back and forth in mark ring
+(use-package back-button
+	:ensure t
+	:defer 3
+	:init
+	(setq back-button-no-wrap t)
+	(setq back-button-show-toolbar-buttons nil)
+	:config
+	(back-button-mode 1)
+	(global-set-key (kbd "C-q") 'back-button-global-backward)
+	(global-set-key (kbd "M-q") 'back-button-global-forward))

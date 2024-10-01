@@ -34,7 +34,7 @@ The project configs are loaded on startup and every time the project is switched
 |-----+------------------+------------------|
 | 1-9 | Digit Argument   |                  |
 | 0   | Universal Arg    |                  |
-| Q   | Last Mark TODO   | Next Mark TODO   |
+| Q   | Last Mark        | Next Mark        |
 | W   | Copy             | Append Copy TODO |
 | E   | Move             | Duplicate        |
 | R   | Replace          | Replace regex    |
@@ -145,7 +145,7 @@ The project configs are loaded on startup and every time the project is switched
 		- [[https://github.com/tanrax/scroll-page-without-moving-point.el][scroll-page-without-moving-point.el]]
 		- [[https://github.com/lassik/emacs-format-all-the-code][emacs-format-all-the-code]]
 		- [[https://www.emacswiki.org/emacs/download/hideshowvis.el][hideshowvis.el]]
-		- [[https://github.com/rolandwalker/back-butto][back-button]]
+		- [[https://github.com/rolandwalker/back-button][back-button]]
 	- git
 		- [[https://github.com/camdez/goto-last-change.el][goto-last-change]]
 		- [[https://github.com/alphapapa/magit-todos][magit-todos]]
