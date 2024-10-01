@@ -44,3 +44,11 @@
 		(magit-status)))
 (setq projectile-switch-project-action
 			#'my-projectile-switch-project-action)
+
+;; Find links to current file in project
+(defun my-find-links-to-project-file ()
+	"Finds links in project to current file"
+	(interactive)
+	(project-find-regexp (file-relative-name
+												buffer-file-name
+												(projectile-project-root))))
