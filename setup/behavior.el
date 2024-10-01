@@ -11,6 +11,9 @@
 ;; Keep buffers up-to-date
 (global-auto-revert-mode 1)
 
+;; Keep dired up-to-date
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+
 ;; Don't ask about killing processes on exit
 (setq confirm-kill-processes nil)
 
